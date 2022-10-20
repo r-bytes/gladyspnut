@@ -5,15 +5,11 @@ const Layout = ({ children }) => {
                 <title> R-Bytes Store </title>
             </Head> */}
 
-            <header>
-                {/* <Navbar /> */}
-            </header>
+            <header>{/* <Navbar /> */}</header>
 
             <main className="main-container">{children}</main>
 
-            <footer>
-                {/* <Footer /> */}
-            </footer>
+            <footer>{/* <Footer /> */}</footer>
         </div>
     );
 };
