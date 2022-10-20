@@ -1,10 +1,10 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import '@fontsource/roboto/300.css';
-@import '@fontsource/roboto/400.css';
-@import '@fontsource/roboto/500.css';
-@import '@fontsource/roboto/700.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import "@fontsource/roboto/300.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css";
 
 html,
 body {
@@ -46,17 +46,17 @@ a {
     --color-bg-secondary: #181818;
     --color-text-primary: #dbdbdb;
     --color-text-secondary: #e2e8f0;
-    --color-text-accent: #9C89B1;
+    --color-text-accent: #9c89b1;
     --color-bg-input: #4a5361;
-    --color-bg-button: #9C89B1;
+    --color-bg-button: #9c89b1;
 }
 
 .light {
-    --color-bg-primary: #FFFFFF;
-    --color-bg-secondary: #7C7483;
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #7c7483;
     --color-text-primary: #666666;
-    --color-text-secondary: #FFFFFF;
-    --color-text-accent: #9C89B1;
+    --color-text-secondary: #ffffff;
+    --color-text-accent: #9c89b1;
     --color-bg-input: #edf2f7;
     --color-bg-button: #2b6cb0;
 }
