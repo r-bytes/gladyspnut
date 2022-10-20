@@ -1,8 +1,4 @@
 const Art = () => {
-    return (
-        <div>
-            Art
-        </div>
-    )
-}
-export default Art
+    return <div>Art</div>;
+};
+export default Art;

@@ -1,8 +1,4 @@
 const Branding = () => {
-    return (
-        <div>
-            Branding
-        </div>
-    )
-}
-export default Branding
+    return <div>Branding</div>;
+};
+export default Branding;
