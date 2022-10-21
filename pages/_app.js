@@ -1,4 +1,4 @@
-import "@styles/globals.css"
+import "@styles/globals.css";
 import { Header, Footer } from "../components";
 import { ThemeProvider } from "context/ThemeProvider";
 
@@ -9,8 +9,8 @@ function MyApp({ Component, pageProps }) {
                 <Header />
             </header>
 
-                <Component {...pageProps} />
-            
+            <Component {...pageProps} />
+
             <footer>
                 <Footer />
             </footer>

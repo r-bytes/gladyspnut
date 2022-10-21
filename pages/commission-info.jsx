@@ -1,5 +1,5 @@
 const CommissionInfo = () => {
-    console.log("CommissionInfo loaded =>")
+    console.log("CommissionInfo loaded =>");
 
     return <div>CommissionInfo</div>;
 };

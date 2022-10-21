@@ -1,11 +1,11 @@
-import React from 'react'
-import { useThemeContext } from "../context/ThemeProvider"
-import Brightness5Icon from '@mui/icons-material/Brightness5';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
+import React from "react";
+import { useThemeContext } from "../context/ThemeProvider";
+import Brightness5Icon from "@mui/icons-material/Brightness5";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
 
 const Theme = () => {
-    const { theme, toggleTheme } = useThemeContext()
-    
+    const { theme, toggleTheme } = useThemeContext();
+
     return (
         <div className="p-2 text-xs tracking-wider">
             {theme === "dark" ? (
@@ -20,7 +20,7 @@ const Theme = () => {
                 </div>
             )}
         </div>
-    )
-}
+    );
+};
 
-export default Theme
+export default Theme;

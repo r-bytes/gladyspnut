@@ -1,5 +1,5 @@
 const Branding = () => {
-    console.log("branding loaded =>")
+    console.log("branding loaded =>");
 
     return <div>Branding</div>;
 };

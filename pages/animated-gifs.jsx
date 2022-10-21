@@ -1,5 +1,5 @@
 const AnimatedGifs = () => {
-    console.log("animated loaded =>")
+    console.log("animated loaded =>");
 
     return <div>AnimatedGifs</div>;
 };
