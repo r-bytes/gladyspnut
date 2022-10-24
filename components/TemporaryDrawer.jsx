@@ -1,0 +1,88 @@
+import { useState }  from "react";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import { IconButton, Menu } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import { useRouter } from "next/router";
+import BrushIcon from '@mui/icons-material/Brush';
+import InfoIcon from '@mui/icons-material/Info';
+import BadgeIcon from '@mui/icons-material/Badge';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import { Theme } from ".";
+
+export default function TemporaryDrawer() {
+
+
+    const router = useRouter()
+    const pages = [
+
+        {name: "My Work", url: "/", icon: <BrushIcon />}, 
+        {name: "About Me", url: "/about-me", icon: <PermIdentityIcon />}, 
+        {name: "Commission", url: "/commission-info", icon: <InfoIcon />}, 
+        {name: "My Brand", url: "/branding", icon: <BadgeIcon />}, 
+        {name: "Contact", url: "/contact", icon: <AlternateEmailIcon />}
+    ];
+
+    const [state, setState] = useState({
+        right: false,
+    });
+
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
+            return;
+        }
+        setState({ ...state, [anchor]: open });
+    };
+
+    const list = (anchor) => (
+        <Box role="presentation" onKeyDown={toggleDrawer(anchor)} className="h-full">
+            <List className="bg-primary text-primary h-full flex flex-col justify-between items-center w-screen md:w-64 border">
+                <IconButton className="ml-auto mr-5 text-primary hover:bg-secondary" onClick={toggleDrawer("right", false)}>
+                    <CloseIcon />
+                </IconButton>
+                <div className="pb-[40%] md:pb-[100%]">
+
+                    {pages.map((page, index) => (
+                        <ListItem key={index} onClick={() => router.push(page.url)} className="w-full">
+                            <ListItemButton className="hover:bg-secondary px-[200px]">
+                                <ListItemIcon className="hidden md:block text-primary">
+                                    {page.icon}
+                                </ListItemIcon>
+                                <ListItemText disableTypography className="text-primary text-3xl md:text-lg text-center md:text-left font-bold md:font-medium" primary={page.name} />
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
+                </div>
+                <div className="flex justify-center items-center">
+                        <Theme disableTypography text />
+                </div>
+            </List>
+        </Box>
+    );
+
+    return (
+        <div>
+            <>
+                <IconButton className="hover:bg-secondary" onClick={toggleDrawer("right", true)} >
+                    <MenuIcon className="text-primary md:hidden" />    
+                </IconButton>
+                <Drawer
+                    open={state["right"]}
+                    onClose={toggleDrawer("right", false)} anchor={"right"}
+                >
+                    {list("right")}
+
+                </Drawer>
+            </>
+        </div>
+    );
+}
