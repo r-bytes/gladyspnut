@@ -8,10 +8,18 @@ import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
+import { Divider } from "@mui/material";
 
 export default function MenuListComposition() {
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
+
+    const style = {
+        width: '100%',
+        //   maxWidth: 360,
+        bgcolor: '#fdfdfdd1',
+    };
+
 
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
@@ -21,7 +29,6 @@ export default function MenuListComposition() {
         if (anchorRef.current && anchorRef.current.contains(event.target)) {
             return;
         }
-
         setOpen(false);
     };
 
@@ -46,7 +53,7 @@ export default function MenuListComposition() {
 
     return (
         <Stack direction="row" spacing={2}>
-            <div>
+            <div className="flex items-center justify-center">
                 <Button
                     ref={anchorRef}
                     id="composition-button"
@@ -54,9 +61,9 @@ export default function MenuListComposition() {
                     aria-expanded={open ? "true" : undefined}
                     aria-haspopup="true"
                     onClick={handleToggle}
-                    className="text-black text-inherit"
+                    className="text-black text-inherit hover:bg-secondary min-h-fit"
                 >
-                    My Work
+                    Work
                     <KeyboardArrowDownIcon />
                 </Button>
                 <Popper
@@ -74,8 +81,8 @@ export default function MenuListComposition() {
                             style={{
                                 transformOrigin:
                                     placement === "bottom-start"
-                                        ? "left top"
-                                        : "left bottom",
+                                        ? "top"
+                                        : "bottom",
                             }}
                         >
                             <Paper>
@@ -85,13 +92,18 @@ export default function MenuListComposition() {
                                         id="composition-menu"
                                         aria-labelledby="composition-button"
                                         onKeyDown={handleListKeyDown}
-                                        // className="bg-primary text-primary"
+                                        className="bg-primary text-primary flex flex-col justify-center items-start shadow-2xl p-0"
                                     >
-                                        <MenuItem onClick={handleClose}> Art & Illustrations </MenuItem>
-                                        <MenuItem onClick={handleClose}> Logos & Mascots </MenuItem>
-                                        <MenuItem onClick={handleClose}> Branding </MenuItem>
-                                        <MenuItem onClick={handleClose}> Animated Gifs </MenuItem>
-                                        <MenuItem onClick={handleClose}> Commissions </MenuItem>
+                                        
+                                        <MenuItem className="py-4 px-8 w-full" onClick={handleClose} > Art & Illustrations </MenuItem>
+                                        {/* <Divider sx={style} /> */}
+                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} > Logos & Mascots </MenuItem>
+                                        {/* <Divider sx={style} /> */}
+                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} > Branding </MenuItem>
+                                        {/* <Divider sx={style} /> */}
+                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} > Animated Gifs </MenuItem>
+                                        {/* <Divider sx={style} /> */}
+                                        <MenuItem className="py-4 pb-6 px-8 w-full" onClick={handleClose} > Commissions </MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>
