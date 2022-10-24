@@ -1,9 +1,10 @@
-import { Header } from "components";
+import Hero from "@components/Hero";
+import { Footer, Header } from "components";
 import Head from "next/head";
 
 export default function Home() {
     return (
-        <div className="container mx-auto">
+        <div>
             <Head>
                 <title> Gladys P.Nut </title>
                 <meta
@@ -12,11 +13,7 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
-            <main className="min-h-[65vh] flex flex-col flex-1 justify-center items-center text-secondary">
-                <h1 className="text-7xl"> Welcome </h1>
-                <div className="container--grid">Test</div>
-            </main>
+            <Hero heading={"Gladys P. Nut"} message={"Artist and Designer, lover of everything cute"} />
         </div>
     );
 }
