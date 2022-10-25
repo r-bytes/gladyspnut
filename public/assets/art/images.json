@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "/assets/art/1.webp"
+    },
+    {
+        "id": 2,
+        "imageUrl": "/assets/art/2.webp"
+    },
+    {
+        "id": 3,
+        "imageUrl": "/assets/art/3.webp"
+    },
+    {
+        "id": 4,
+        "imageUrl": "/assets/art/4.webp"
+    },
+    {
+        "id": 5,
+        "imageUrl": "/assets/art/5.webp"
+    },
+    {
+        "id": 6,
+        "imageUrl": "/assets/art/6.webp"
+    },
+    {
+        "id": 7,
+        "imageUrl": "/assets/art/7.webp"
+    },
+    {
+        "id": 8,
+        "imageUrl": "/assets/art/8.webp"
+    },
+    {
+        "id": 9,
+        "imageUrl": "/assets/art/9.webp"
+    },
+    {
+        "id": 10,
+        "imageUrl": "/assets/art/10.webp"
+    },
+    {
+        "id": 11,
+        "imageUrl": "/assets/art/11.webp"
+    },
+    {
+        "id": 12,
+        "imageUrl": "/assets/art/12.webp"
+    },
+    {
+        "id": 13,
+        "imageUrl": "/assets/art/13.webp"
+    },
+    {
+        "id": 14,
+        "imageUrl": "/assets/art/14.webp"
+    },
+    {
+        "id": 15,
+        "imageUrl": "/assets/art/15.webp"
+    },
+    {
+        "id": 16,
+        "imageUrl": "/assets/art/16.webp"
+    },
+    {
+        "id": 17,
+        "imageUrl": "/assets/art/17.webp"
+    },
+    {
+        "id": 18,
+        "imageUrl": "/assets/art/18.webp"
+    }
+]
