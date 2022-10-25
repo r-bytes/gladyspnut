@@ -9,6 +9,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
 import { Divider } from "@mui/material";
+import Link from "next/link";
 
 export default function MenuListComposition() {
     const [open, setOpen] = useState(false);
@@ -95,7 +96,7 @@ export default function MenuListComposition() {
                                         className="bg-primary text-primary flex flex-col justify-center items-start shadow-2xl p-0"
                                     >
                                         
-                                        <MenuItem className="py-4 px-8 w-full" onClick={handleClose} > Art & Illustrations </MenuItem>
+                                        <MenuItem className="py-4 px-8 w-full" onClick={handleClose}> <Link href="/art-and-illustrations"> Art & Illustrations </Link></MenuItem>
                                         {/* <Divider sx={style} /> */}
                                         <MenuItem className="py-3 px-8 w-full" onClick={handleClose} > Logos & Mascots </MenuItem>
                                         {/* <Divider sx={style} /> */}

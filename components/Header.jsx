@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <div className="text-primary">
             {/* top header */}
-            <div className="flex justify-between items-center px-48 bg-secondary text-xs h-8 tracking-wider">
+            {/* <div className="flex justify-between items-center px-48 bg-secondary text-xs h-8 tracking-wider">
                 <span className="flex justify-between items-center  border border-green-500 w-screen">
                     <EmailIcon fontSize="small" className="mr-1 py-0.5" />
                     <Link href="mailto:info@gladyspnut.com">
@@ -24,7 +24,7 @@ const Header = () => {
                     </Link>
                 </span>
                 <Theme />
-            </div>
+            </div> */}
             {/* sub header */}
             <div className="w-screen justify-center flex md:justify-between items-center h-32 text-primary">
                 {/* logo and navbar */}

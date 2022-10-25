@@ -36,7 +36,7 @@ const Navbar = () => {
     ];
   
     return (
-        <AppBar position="static" className="bg-primary text-primary fixed left-0 top-0 w-full">
+        <AppBar position="static" className="bg-primary text-primary fixed left-0 top-0 w-full z-50">
             <Container maxWidth="xl" >
                 <Toolbar className="flex py-6" disableGutters>
                     <a href={"/"} className="cursor-pointer">
