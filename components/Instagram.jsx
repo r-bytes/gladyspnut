@@ -8,9 +8,8 @@ import { Button } from "@mui/material";
 
 const Instagram = () => {
     const [posts, setPosts] = useState([])
-
     useEffect(() => {
-      fetch("https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&&access_token=IGQVJYejRwNFZA3SDNWNm5kb0tEenN3UVgza1I2Nzd0b0JSa29wRk5vYW0xY0ZA0QzlkUko2bTBPd0Y3NnMxQ0VadG9Ca3Y1NUh4d0VGY2poalJOLXFaUF9HS19XaFJ0TnM4ZAlFKMlBmSkhadEdFN19rXwZDZD")
+        fetch(`https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&&access_token=${process.env.NEXT_PUBLIC_INSTA}`)
         .then(response => {
             return response.json()
         })
@@ -29,7 +28,6 @@ const Instagram = () => {
                             <div className="absolute hover:bg-black/70 z-50" />
                         </a>
                     ))}
-                    {/* <InstagramFeed className="" token={"IGQVJYejRwNFZA3SDNWNm5kb0tEenN3UVgza1I2Nzd0b0JSa29wRk5vYW0xY0ZA0QzlkUko2bTBPd0Y3NnMxQ0VadG9Ca3Y1NUh4d0VGY2poalJOLXFaUF9HS19XaFJ0TnM4ZAlFKMlBmSkhadEdFN19rXwZDZD"}  counter="6"/> */}
                 <a href={`https://www.instagram.com/raysolles`} target="_blank" className="my-12 text-primary bg-primary w-full text-center" rel="noreferrer">
                     <Button
                         className="text-primary bg-primary rounded-full" style={{fontSize: "18px", padding: "1.2rem 2rem", color: "#ffffff",
