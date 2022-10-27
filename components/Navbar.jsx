@@ -9,10 +9,32 @@ import Button from "@mui/material/Button";
 import TemporaryDrawer from "./TemporaryDrawer";
 import { useEffect, useState } from "react";
 import Theme from "./Theme"
+import { useRouter } from "next/router";
 
 const Navbar = () => {
     const [color, setColor] = useState("transparant")
     const [textColor, setTextColor] = useState("blue")
+    const [activePage, setActivePage] = useState(false)
+
+    const router = useRouter();
+
+    console.log(router.pathname);
+
+
+    useEffect(() => {
+        if (router.pathname === "/about-me") {
+            setActivePage("About")
+        } else if (router.pathname === "/commission-info"){
+            setActivePage("Commission")
+        } else if (router.pathname === "https://cutiesquad.com") {
+            setActivePage(false)
+            
+        } else if (router.pathname === "/contact") {
+            setActivePage("Contact")
+        }
+    }, [router])
+    
+
 
     useEffect(() => {
         const changeColor = () => {

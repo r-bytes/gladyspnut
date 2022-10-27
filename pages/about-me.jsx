@@ -6,6 +6,7 @@ const About = () => {
     return (
         <div className="">
             <GridRegular
+                insta
                 title={"About Me"}
                 subTitle={"Hi there! I am an illustrator from the Netherlands, specializing in character design and everything kawaii!"}
                 intro={`I love to give life to all sorts of characters and my work is influenced a lot by Japanese pop culture. I discovered this at a young age through anime and manga. \n

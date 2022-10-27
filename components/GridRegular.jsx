@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const GridRegular = ({ title, subTitle, intro, image, socials }) => {
+const GridRegular = ({ title, subTitle, intro, image, socials, insta}) => {
         
     return (
         <div className="pt-44 sm:pt-32 max-w-[1280px] mx-auto">
@@ -19,11 +19,13 @@ const GridRegular = ({ title, subTitle, intro, image, socials }) => {
                         </p>
                     {socials ? (socials) : ("")}
                 </div>
-                <div className="hidden 2xl:block">
-                    <Image src={image} height={500} width={500} alt={"#"} 
-                        className="rounded-full"
-                    />
-                </div>
+                {insta ? (
+                    <div className="hidden 2xl:block">
+                        <Image src={image} height={500} width={500} alt={"#"} 
+                            className="rounded-full"
+                        />
+                    </div>
+                ) : ("")}
             </div>
         </div>
     )

@@ -17,26 +17,33 @@ const Instagram = () => {
     }, [])
 
     const images = posts?.filter(p => p.media_type === "IMAGE")
+    const carouselImages = posts?.filter(p => p.media_type === "CAROUSEL_ALBUM")
+    console.log(carouselImages)
 
     return (
         <div>
-            <div className="container px-16 border max-w-[1280px] mx-auto flex flex-wrap justify-center items-center">
-                <h1 className="w-full text-5xl font-bold mb-16 mt-12 ml-4 text-center sm:text-left"> {"Instagram Feed"} </h1>
+            <div className="container max-w-[1280px]    px-12 md:px-16 sm:max-w-5xl md:max-w-3xl lg:max-w-4xl 2xl:max-w-7xl         mx-auto grid place-items-center sm:place-items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
+                <h1 className="col-span-full text-5xl font-bold mb-16 mt-12"> {"Instagram Feed"} </h1>
                     {images?.map(i => (
                         <a className="mx-auto" key={i.id} href={i.permalink}>
-                            <Image className="relative rounded-2xl" src={i.media_url} height={250} width={250} alt="2" />
-                            <div className="absolute hover:bg-black/70 z-50" />
+                            <Image className="rounded-2xl" src={i.media_url} height={300} width={300} alt="2" />
                         </a>
                     ))}
-                <a href={`https://www.instagram.com/raysolles`} target="_blank" className="my-12 text-primary bg-primary w-full text-center" rel="noreferrer">
-                    <Button
-                        className="text-primary bg-primary rounded-full" style={{fontSize: "18px", padding: "1.2rem 2rem", color: "#ffffff",
-                            backgroundImage: "linear-gradient(to right,#405de6,#5851db, #833ab4, #c13584, #e1306c, #fd1d1d)"
-                        }}
-                        >
-                        Follow @ raysolles
-                    </Button>
-                </a>
+                    {carouselImages?.map(i => (
+                        <a className="mx-auto" key={i.id} href={i.permalink}>
+                            <Image className="rounded-2xl" src={i.media_url} height={300} width={300} alt="2" />
+                        </a>
+                    ))}
+                    <div className="col-span-full my-12 mb-24 mx-auto">
+                        <a href={`https://www.instagram.com/raysolles`} target="_blank" rel="noReferrer">
+                            <span
+                                className="rounded-2xl shadow-2xl hover:underline hover:translate-y-1" style={{fontSize: "18px", padding: ".8rem 1.7rem", color: "#ffffff",
+                                    backgroundImage: "linear-gradient(to right,#405de6,#5851db, #833ab4, #c13584, #e1306c, #fd1d1d)"
+                                }}>
+                                Follow @ raysolles
+                            </span>
+                        </a>
+                    </div>
             </div>
         </div>
     )
