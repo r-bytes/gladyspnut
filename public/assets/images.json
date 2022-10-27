@@ -383,5 +383,49 @@
         "id": 77,
         "imageUrl": "/assets/insta/8.png",
         "page": "insta"
+    },
+    {
+        "id": 78,
+        "imageUrl": "/assets/commissionInfo/1.webp",
+        "page": "commissionInfo",
+        "title": "Profile Icon | Avatar",
+        "price": "starting at 35 EUR",
+        "info": [
+            "Your own Avatar. This can be one of my OCs, your OC, a fictional character of yourself!",
+            "You will receive a square .png file (2000 x 2000 pixels) that can be used on social media, Twitch, and Discord.",
+            "Free revisions within reason (please see the Terms)."
+        ]
+    },
+    {
+        "id": 79,
+        "imageUrl": "/assets/commissionInfo/2.webp",
+        "page": "commissionInfo",
+        "title": "Custom Emotes",
+        "price": "25 EUR per emote, volume discount available",
+        "info": [""]
+    },
+    {
+        "id": 80,
+        "imageUrl": "/assets/commissionInfo/3.webp",
+        "page": "commissionInfo",
+        "title": "",
+        "price": "",
+        "info": [""]
+    },
+    {
+        "id": 81,
+        "imageUrl": "/assets/commissionInfo/4.webp",
+        "page": "commissionInfo",
+        "title": "",
+        "price": "",
+        "info": [""]
+    },
+    {
+        "id": 82,
+        "imageUrl": "/assets/commissionInfo/5.webp",
+        "page": "commissionInfo",
+        "title": "",
+        "price": "",
+        "info": [""]
     }
 ]
