@@ -1,6 +1,15 @@
-const Branding = () => {
-    console.log("branding loaded =>");
+import { GridImage } from "@components/index";
+import images from "@images/images.json"
 
-    return <div>Branding</div>;
+const Branding = () => {
+    const selectedImages = images.filter(i => i.page === "branding")
+
+    return (
+        <GridImage
+            title={"Branding"}
+            images={selectedImages}
+        />
+    );
 };
+
 export default Branding;

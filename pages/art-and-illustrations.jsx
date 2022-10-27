@@ -1,11 +1,14 @@
-import ImageGrid from "@components/ImageGrid";
-import Image from "next/image";
-import images from "../public/assets/art/images.json"
+import { GridImage } from "@components/index";
+import images from "@images/images.json"
 
 const Art = () => {
+    const selectedImages = images.filter(i => i.page === "art")
 
     return (
-        <ImageGrid title={"Art & Illustrations"} images={images} />
+        <GridImage
+            title={"Art & Illustrations"}
+            images={selectedImages}    
+        />
     );
 };
 export default Art;

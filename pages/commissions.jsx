@@ -1,14 +1,15 @@
 import { GridImage } from "@components/index";
 import images from "@images/images.json"
 
-const Logos = () => {
-    const selectedImages = images.filter(i => i.page === "logos")
+const Commisions = () => {
+    const selectedImages = images.filter(i => i.page === "commissions")
 
     return (
         <GridImage 
-            title={"Logos"} 
+            title={"Commisions"} 
             images={selectedImages}     
         />
     );
 };
-export default Logos;
+
+export default Commisions;
