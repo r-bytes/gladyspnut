@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "imageUrl": "/assets/art/1.webp",
+        "page": "art"
+    },
+    {
+        "id": 2,
+        "imageUrl": "/assets/art/2.webp",
+        "page": "art"
+    },
+    {
+        "id": 3,
+        "imageUrl": "/assets/art/3.webp",
+        "page": "art"
+    },
+    {
+        "id": 4,
+        "imageUrl": "/assets/art/4.webp",
+        "page": "art"
+    },
+    {
+        "id": 5,
+        "imageUrl": "/assets/art/5.webp",
+        "page": "art"
+    },
+    {
+        "id": 6,
+        "imageUrl": "/assets/art/6.webp",
+        "page": "art"
+    },
+    {
+        "id": 7,
+        "imageUrl": "/assets/art/7.webp",
+        "page": "art"
+    },
+    {
+        "id": 8,
+        "imageUrl": "/assets/art/8.webp",
+        "page": "art"
+    },
+    {
+        "id": 9,
+        "imageUrl": "/assets/art/9.webp",
+        "page": "art"
+    },
+    {
+        "id": 10,
+        "imageUrl": "/assets/art/10.webp",
+        "page": "art"
+    },
+    {
+        "id": 11,
+        "imageUrl": "/assets/art/11.webp",
+        "page": "art"
+    },
+    {
+        "id": 12,
+        "imageUrl": "/assets/art/12.webp",
+        "page": "art"
+    },
+    {
+        "id": 13,
+        "imageUrl": "/assets/art/13.webp",
+        "page": "art"
+    },
+    {
+        "id": 14,
+        "imageUrl": "/assets/art/14.webp",
+        "page": "art"
+    },
+    {
+        "id": 15,
+        "imageUrl": "/assets/art/15.webp",
+        "page": "art"
+    },
+    {
+        "id": 16,
+        "imageUrl": "/assets/art/16.webp",
+        "page": "art"
+    },
+    {
+        "id": 17,
+        "imageUrl": "/assets/art/17.webp",
+        "page": "art"
+    },
+    {
+        "id": 18,
+        "imageUrl": "/assets/art/18.webp",
+        "page": "art"
+    },
+    {
+        "id": 19,
+        "imageUrl": "/assets/branding/1.webp",
+        "page": "branding"
+    },
+    {
+        "id": 20,
+        "imageUrl": "/assets/branding/2.webp",
+        "page": "branding"
+    },
+    {
+        "id": 21,
+        "imageUrl": "/assets/branding/3.webp",
+        "page": "branding"
+    },
+    {
+        "id": 22,
+        "imageUrl": "/assets/branding/4.webp",
+        "page": "branding"
+    },
+    {
+        "id": 23,
+        "imageUrl": "/assets/branding/5.webp",
+        "page": "branding"
+    },
+    {
+        "id": 24,
+        "imageUrl": "/assets/branding/6.webp",
+        "page": "branding"
+    },
+    {
+        "id": 25,
+        "imageUrl": "/assets/branding/7.webp",
+        "page": "branding"
+    },
+    {
+        "id": 26,
+        "imageUrl": "/assets/branding/8.webp",
+        "page": "branding"
+    },
+    {
+        "id": 27,
+        "imageUrl": "/assets/branding/9.webp",
+        "page": "branding"
+    },
+    {
+        "id": 28,
+        "imageUrl": "/assets/commissions/1.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 29,
+        "imageUrl": "/assets/commissions/2.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 30,
+        "imageUrl": "/assets/commissions/3.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 31,
+        "imageUrl": "/assets/commissions/4.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 32,
+        "imageUrl": "/assets/commissions/5.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 33,
+        "imageUrl": "/assets/commissions/6.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 34,
+        "imageUrl": "/assets/commissions/7.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 35,
+        "imageUrl": "/assets/commissions/8.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 36,
+        "imageUrl": "/assets/commissions/9.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 37,
+        "imageUrl": "/assets/commissions/10.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 38,
+        "imageUrl": "/assets/commissions/11.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 39,
+        "imageUrl": "/assets/commissions/12.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 40,
+        "imageUrl": "/assets/commissions/13.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 41,
+        "imageUrl": "/assets/commissions/14.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 42,
+        "imageUrl": "/assets/commissions/15.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 43,
+        "imageUrl": "/assets/commissions/16.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 44,
+        "imageUrl": "/assets/commissions/17.webp",
+        "page": "commissions"
+    },
+    {
+        "id": 45,
+        "imageUrl": "/assets/logos/1.webp",
+        "page": "logos"
+    },
+    {
+        "id": 46,
+        "imageUrl": "/assets/logos/2.webp",
+        "page": "logos"
+    },
+    {
+        "id": 47,
+        "imageUrl": "/assets/logos/3.webp",
+        "page": "logos"
+    },
+    {
+        "id": 48,
+        "imageUrl": "/assets/logos/4.webp",
+        "page": "logos"
+    },
+    {
+        "id": 49,
+        "imageUrl": "/assets/logos/5.webp",
+        "page": "logos"
+    },
+    {
+        "id": 50,
+        "imageUrl": "/assets/logos/6.webp",
+        "page": "logos"
+    },
+    {
+        "id": 51,
+        "imageUrl": "/assets/logos/7.webp",
+        "page": "logos"
+    },
+    {
+        "id": 52,
+        "imageUrl": "/assets/logos/8.webp",
+        "page": "logos"
+    },
+    {
+        "id": 53,
+        "imageUrl": "/assets/logos/9.webp",
+        "page": "logos"
+    },
+    {
+        "id": 54,
+        "imageUrl": "/assets/logos/10.webp",
+        "page": "logos"
+    },
+    {
+        "id": 55,
+        "imageUrl": "/assets/logos/11.webp",
+        "page": "logos"
+    },
+    {
+        "id": 56,
+        "imageUrl": "/assets/logos/12.webp",
+        "page": "logos"
+    },
+    {
+        "id": 57,
+        "imageUrl": "/assets/logos/13.webp",
+        "page": "logos"
+    },
+    {
+        "id": 58,
+        "imageUrl": "/assets/logos/14.webp",
+        "page": "logos"
+    },
+    {
+        "id": 59,
+        "imageUrl": "/assets/animatedGifs/1.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 60,
+        "imageUrl": "/assets/animatedGifs/2.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 61,
+        "imageUrl": "/assets/animatedGifs/3.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 62,
+        "imageUrl": "/assets/animatedGifs/4.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 63,
+        "imageUrl": "/assets/animatedGifs/5.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 64,
+        "imageUrl": "/assets/animatedGifs/6.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 65,
+        "imageUrl": "/assets/animatedGifs/7.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 66,
+        "imageUrl": "/assets/animatedGifs/8.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 67,
+        "imageUrl": "/assets/animatedGifs/9.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 68,
+        "imageUrl": "/assets/animatedGifs/10.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 69,
+        "imageUrl": "/assets/animatedGifs/11.webp",
+        "page": "animatedGifs"
+    },
+    {
+        "id": 70,
+        "imageUrl": "/assets/insta/1.png",
+        "page": "insta"
+    },
+    {
+        "id": 71,
+        "imageUrl": "/assets/insta/2.png",
+        "page": "insta"
+    },
+    {
+        "id": 72,
+        "imageUrl": "/assets/insta/3.png",
+        "page": "insta"
+    },
+    {
+        "id": 73,
+        "imageUrl": "/assets/insta/4.png",
+        "page": "insta"
+    },
+    {
+        "id": 74,
+        "imageUrl": "/assets/insta/5.png",
+        "page": "insta"
+    },
+    {
+        "id": 75,
+        "imageUrl": "/assets/insta/6.png",
+        "page": "insta"
+    },
+    {
+        "id": 76,
+        "imageUrl": "/assets/insta/7.png",
+        "page": "insta"
+    },
+    {
+        "id": 77,
+        "imageUrl": "/assets/insta/8.png",
+        "page": "insta"
+    }
+]
