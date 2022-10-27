@@ -31,15 +31,15 @@ const Navbar = () => {
     const pages = [
         {name: "About", url: "/about-me"}, 
         {name: "Commission", url: "/commission-info"}, 
-        {name: "My Brand", url: "/branding"}, 
+        {name: "My Brand", url: "https://cutiesquad.com"},
         {name: "Contact", url: "/contact"}
     ];
   
     return (
-        <AppBar position="static" className="bg-primary text-primary fixed left-0 top-0 w-full z-50">
+        <AppBar position="static" className="bg-primary text-primary fixed left-0 top-0 w-full min-h-44 z-50">
             <Container maxWidth="xl" >
-                <Toolbar className="flex py-6" disableGutters>
-                    <a href={"/"} className="cursor-pointer">
+                <Toolbar className="flex flex-col sm:flex-row py-6" disableGutters>
+                    <a href={"/"} className="cursor-pointer order-2 sm:order-1">
                         <Image
                             className=""
                             priority="true"
@@ -50,21 +50,19 @@ const Navbar = () => {
                         />
                     </a>
                     
-                    <Container maxWidth="sm" className="mr-0 flex items-center justify-end max-w-fit">
+                    <Container maxWidth="sm" className="mr-0 flex items-center justify-end max-w-fit order-1 sm:order-1 pr-0">
                         <Box className="hidden md:flex md:justify-between" >
                             <MenuListComposition className="text-primary" />
                                 {pages.map((page, i) => (
-                                    <Button key={i} className="text-primary my-1 mr-2 block hover:bg-secondary" >
+                                    <Button key={i} className="text-primary my-1 mr-2 block hover:bg-secondary min-w-fit" >
                                         <Link href={page.url} >
                                             {page.name}
                                         </Link>      
                                     </Button>
                                 ))}
                         </Box>
+                        <Theme />
                         <TemporaryDrawer />
-                        
-                            <Theme />
-                        
                     </Container>
                 </Toolbar>
             </Container>

@@ -45,19 +45,19 @@ export default function TemporaryDrawer() {
 
     const list = (anchor) => (
         <Box role="presentation" onKeyDown={toggleDrawer(anchor)} className="h-full">
-            <List className="bg-primary text-primary h-full flex flex-col justify-between items-center w-screen md:w-64 border">
+            <List className="bg-primary text-primary h-full flex flex-col justify-between items-center w-screen sm:w-72">
                 <IconButton className="ml-auto mr-5 text-primary hover:bg-secondary" onClick={toggleDrawer("right", false)}>
                     <CloseIcon />
                 </IconButton>
-                <div className="pb-[40%] md:pb-[100%]">
+                <div className="">
 
                     {pages.map((page, index) => (
                         <ListItem key={index} onClick={() => router.push(page.url)} className="w-full">
                             <ListItemButton className="hover:bg-secondary px-[200px]">
-                                <ListItemIcon className="hidden md:block text-primary">
+                                <ListItemIcon className="hidden sm:block text-primary">
                                     {page.icon}
                                 </ListItemIcon>
-                                <ListItemText disableTypography className="text-primary text-3xl md:text-lg text-center md:text-left font-bold md:font-medium" primary={page.name} />
+                                <ListItemText disableTypography className="text-primary text-3xl sm:text-lg text-center sm:text-left font-bold sm:font-medium" primary={page.name} />
                             </ListItemButton>
                         </ListItem>
                     ))}
@@ -70,19 +70,17 @@ export default function TemporaryDrawer() {
     );
 
     return (
-        <div>
-            <>
-                <IconButton className="hover:bg-secondary" onClick={toggleDrawer("right", true)} >
-                    <MenuIcon className="text-primary md:hidden" />    
-                </IconButton>
-                <Drawer
-                    open={state["right"]}
-                    onClose={toggleDrawer("right", false)} anchor={"right"}
-                >
-                    {list("right")}
+        <>
+            <IconButton className="hover:bg-secondary" onClick={toggleDrawer("right", true)} >
+                <MenuIcon className="text-primary md:hidden" />    
+            </IconButton>
+            <Drawer
+                open={state["right"]}
+                onClose={toggleDrawer("right", false)} anchor={"right"}
+            >
+                {list("right")}
 
-                </Drawer>
-            </>
-        </div>
+            </Drawer>
+        </>
     );
 }

@@ -18,7 +18,7 @@ export default function MenuListComposition() {
     const style = {
         width: '100%',
         //   maxWidth: 360,
-        bgcolor: '#fdfdfdd1',
+        bgcolor: '#c7c7c7d1',
     };
 
 
@@ -96,15 +96,21 @@ export default function MenuListComposition() {
                                         className="bg-primary text-primary flex flex-col justify-center items-start shadow-2xl p-0"
                                     >
                                         
-                                        <MenuItem className="py-4 px-8 w-full" onClick={handleClose}> <Link href="/art-and-illustrations"> Art & Illustrations </Link></MenuItem>
-                                        {/* <Divider sx={style} /> */}
-                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} > Logos & Mascots </MenuItem>
-                                        {/* <Divider sx={style} /> */}
-                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} > Branding </MenuItem>
-                                        {/* <Divider sx={style} /> */}
-                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} > Animated Gifs </MenuItem>
-                                        {/* <Divider sx={style} /> */}
-                                        <MenuItem className="py-4 pb-6 px-8 w-full" onClick={handleClose} > Commissions </MenuItem>
+                                        <MenuItem className="py-4 px-8 w-full" onClick={handleClose}>
+                                            <Link href="/art-and-illustrations"> Art & Illustrations </Link>
+                                        </MenuItem>
+                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} >
+                                            <Link href="/animated-gifs"> Animated Gifs </Link>
+                                        </MenuItem>
+                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} >
+                                            <Link href="/branding"> Branding </Link>
+                                        </MenuItem>
+                                            <MenuItem className="py-4 pb-6 px-8 w-full" onClick={handleClose} >
+                                        <Link href="/commissions"> Commissions </Link>
+                                        </MenuItem>
+                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} >
+                                            <Link href="/logos-and-mascots"> Logos & Mascots </Link>
+                                        </MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>
