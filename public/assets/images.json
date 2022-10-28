@@ -386,6 +386,7 @@
     },
     {
         "id": 78,
+        "carousel": false,
         "imageUrl": "/assets/commissionInfo/1.webp",
         "page": "commissionInfo",
         "title": "Profile Icon | Avatar",
@@ -398,34 +399,35 @@
     },
     {
         "id": 79,
-        "imageUrl": "/assets/commissionInfo/2.webp",
+        "carousel": true,
+        "items": [
+            {"id": 1, "imageUrl": "/assets/commissionInfo/2.webp"},
+            {"id": 2, "imageUrl": "/assets/commissionInfo/3.webp"},
+            {"id": 3, "imageUrl": "/assets/commissionInfo/4.webp"}
+        ],
         "page": "commissionInfo",
         "title": "Custom Emotes",
         "price": "25 EUR per emote, volume discount available",
-        "info": [""]
+        "info": [
+            "For each emote you will receive the following sizes: 112 x 112, 56 x 56, 28 x 28 pixels.",
+            "Larger, high-resolution files are available and can be purchased for $10 per file.",
+            "Each order includes a social media graphic you can use to show off your new emotes.",
+            "Free revisions within reason (please see the Terms)."
+
+        ]
     },
     {
         "id": 80,
-        "imageUrl": "/assets/commissionInfo/3.webp",
-        "page": "commissionInfo",
-        "title": "",
-        "price": "",
-        "info": [""]
-    },
-    {
-        "id": 81,
-        "imageUrl": "/assets/commissionInfo/4.webp",
-        "page": "commissionInfo",
-        "title": "",
-        "price": "",
-        "info": [""]
-    },
-    {
-        "id": 82,
+        "carousel": false,
         "imageUrl": "/assets/commissionInfo/5.webp",
         "page": "commissionInfo",
-        "title": "",
-        "price": "",
-        "info": [""]
+        "title": "Kawaii Character/OC/Pet etc.",
+        "price": "starting at 45 EUR",
+        "info": [
+            "Additional characters are subject to an extra charge.",
+            "Each commission includes a high-resolution file.",
+            "For more complex mascots/illustrations, you will receive a sketch to approve before the final colored artwork is done. Significant changes to the line work after the sketch is approved are subject to additional revision charges.",
+            "Free revisions within reason (please see the Terms)."
+        ]
     }
 ]
