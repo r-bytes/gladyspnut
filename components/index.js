@@ -6,3 +6,5 @@ export { default as GridImage } from "./GridImage.jsx";
 export { default as GridRegular } from "./GridRegular.jsx";
 export { default as SocialIcons } from "./SocialIcons.jsx";
 export { default as Instagram } from "./Instagram.jsx";
+export { default as Carousel } from "./Carousel.jsx";
+export { default as Commission } from "./Commission.jsx";
