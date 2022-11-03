@@ -8,6 +8,8 @@ module.exports = {
             backgroundColor: {
                 primary: "var(--color-bg-primary)",
                 secondary: "var(--color-bg-secondary)",
+                primaryAccent: "var(--color-bg-primary-accent)",
+                secondaryAccent: "var(--color-bg-secondary-accent)",
                 button: "var(--color-bg-button)",
             },
             textColor: {

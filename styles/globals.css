@@ -72,8 +72,10 @@ a {
 .dark {
     --color-bg-primary: #222222;
     --color-bg-secondary: #181818;
+    --color-bg-primary-accent: #9c89b1;
+    --color-bg-secondary-accent: #7C7483;
     --color-text-primary: #dbdbdb;
-    --color-text-secondary: #"e2e8f0";
+    --color-text-secondary: #222222;
     --color-text-accent: #9c89b1;
     --color-bg-input: #4a5361;
     --color-bg-button: #9c89b1;
