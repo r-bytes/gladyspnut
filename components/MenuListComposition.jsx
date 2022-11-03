@@ -8,19 +8,13 @@ import MenuItem from "@mui/material/MenuItem";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
-import { Divider } from "@mui/material";
+import { Divider, IconButton } from "@mui/material";
 import Link from "next/link";
 
 export default function MenuListComposition() {
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
-
-    const style = {
-        width: '100%',
-        //   maxWidth: 360,
-        bgcolor: '#c7c7c7d1',
-    };
-
+    const [hover, setHover] = useState(false)
 
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
@@ -55,18 +49,21 @@ export default function MenuListComposition() {
     return (
         <Stack direction="row" spacing={2}>
             <div className="flex items-center justify-center">
-                <Button
+                <IconButton
+                    className={"rounded text-primary py-2 px-2 mx-2 text-sm font-semibold uppercase tracking-widest"}
                     ref={anchorRef}
                     id="composition-button"
                     aria-controls={open ? "composition-menu" : undefined}
                     aria-expanded={open ? "true" : undefined}
                     aria-haspopup="true"
                     onClick={handleToggle}
-                    className="text-black text-inherit hover:bg-secondary min-h-fit"
+                    onMouseEnter={() => setHover(true)}
                 >
+                <span className="hover:text-accent">
                     Work
-                    <KeyboardArrowDownIcon />
-                </Button>
+                    <KeyboardArrowDownIcon className="ml-1" />
+                </span>
+                </IconButton>
                 <Popper
                     open={open}
                     anchorEl={anchorRef.current}
@@ -96,19 +93,39 @@ export default function MenuListComposition() {
                                         className="bg-primary text-primary flex flex-col justify-center items-start shadow-2xl p-0"
                                     >
                                         
-                                        <MenuItem className="py-4 px-8 w-full" onClick={handleClose}>
+                                        <MenuItem
+                                            className={hover ? "py-4 px-8 w-full hover:text-accent" : "py-4 px-8 w-full"}
+                                            onClick={handleClose}
+                                            onMouseEnter={() => setHover(true)}
+                                        >
                                             <Link href="/art-and-illustrations"> Art & Illustrations </Link>
                                         </MenuItem>
-                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} >
+                                        <MenuItem
+                                            className={hover ? "py-4 px-8 w-full  hover:text-accent" : "py-4 px-8 w-full"}
+                                            onClick={handleClose}
+                                            onMouseEnter={() => setHover(true)}
+                                        >
+                                            
                                             <Link href="/animated-gifs"> Animated Gifs </Link>
                                         </MenuItem>
-                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} >
+                                        <MenuItem 
+                                            className={hover ? "py-4 px-8 w-full  hover:text-accent" : "py-4 px-8 w-full"}
+                                            onClick={handleClose}
+                                            onMouseEnter={() => setHover(true)}
+                                        >
                                             <Link href="/branding"> Branding </Link>
                                         </MenuItem>
-                                            <MenuItem className="py-4 pb-6 px-8 w-full" onClick={handleClose} >
+                                            <MenuItem 
+                                                className={hover ? "py-4 px-8 w-full  hover:text-accent" : "py-4 px-8 w-full"}
+                                                onClick={handleClose}
+                                                onMouseEnter={() => setHover(true)}>
                                         <Link href="/commissions"> Commissions </Link>
                                         </MenuItem>
-                                        <MenuItem className="py-3 px-8 w-full" onClick={handleClose} >
+                                        <MenuItem 
+                                            className={hover ? "py-4 px-8 w-full  hover:text-accent" : "py-4 px-8 w-full"}
+                                            onClick={handleClose}
+                                            onMouseEnter={() => setHover(true)}
+                                        >
                                             <Link href="/logos-and-mascots"> Logos & Mascots </Link>
                                         </MenuItem>
                                     </MenuList>

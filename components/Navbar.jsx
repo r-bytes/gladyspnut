@@ -10,11 +10,12 @@ import TemporaryDrawer from "./TemporaryDrawer";
 import { useEffect, useState } from "react";
 import Theme from "./Theme"
 import { useRouter } from "next/router";
+import { IconButton } from "@mui/material";
 
 const Navbar = () => {
-    const [color, setColor] = useState("transparant")
-    const [textColor, setTextColor] = useState("blue")
     const [activePage, setActivePage] = useState(false)
+    const [hover, setHover] = useState(false)
+
 
     const router = useRouter();
 
@@ -36,18 +37,7 @@ const Navbar = () => {
     
 
 
-    useEffect(() => {
-        const changeColor = () => {
-            if (window.screenY >= 90) {
-                setColor("#ffffff")
-            } else {
-                setColor("transparant")
-                setTextColor("red")
-            }
-        }
-        window.addEventListener("scroll", changeColor)
-    
-    }, [])
+
     
 
     const pages = [
@@ -74,16 +64,21 @@ const Navbar = () => {
                     
                     <Container maxWidth="sm" className="mr-0 flex items-center justify-end max-w-fit order-1 sm:order-1 pr-0">
                         <Box className="hidden md:flex md:justify-between" >
-                            <MenuListComposition className="text-primary" />
+                            <MenuListComposition />
+                                
                                 {pages.map((page, i) => (
-                                    <Button key={i} className="text-primary my-1 mr-2 block hover:bg-secondary min-w-fit" >
-                                        <Link href={page.url} >
-                                            {page.name}
+                                    <IconButton
+                                        key={i}
+                                        className={"rounded text-sm text-primary font-semibold py-2 px-2 mx-2 uppercase tracking-widest"}
+                                    >
+                                        <Link href={page.url}>
+                                            <a className="hover:text-accent"> {page.name}</a>
                                         </Link>      
-                                    </Button>
+                                    </IconButton>
                                 ))}
                         </Box>
                         <Theme />
+
                         <TemporaryDrawer />
                     </Container>
                 </Toolbar>
