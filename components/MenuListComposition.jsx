@@ -59,7 +59,7 @@ export default function MenuListComposition() {
                     onClick={handleToggle}
                     onMouseEnter={() => setHover(true)}
                 >
-                <span className="hover:text-accent">
+                <span className="hover:text-accent text-xs lg:text-sm">
                     Work
                     <KeyboardArrowDownIcon className="ml-1" />
                 </span>

@@ -54,7 +54,7 @@ export default function TemporaryDrawer() {
                     {pages.map((page, index) => (
                         <ListItem key={index} onClick={() => router.push(page.url)} className="w-full">
                             <ListItemButton className="hover:bg-secondary px-[200px]">
-                                <ListItemIcon className="hidden sm:block text-primary">
+                                <ListItemIcon className="hidden sm:flex text-primary">
                                     {page.icon}
                                 </ListItemIcon>
                                 <ListItemText disableTypography className="text-primary text-3xl sm:text-lg text-center sm:text-left font-bold sm:font-medium" primary={page.name} />
@@ -70,8 +70,8 @@ export default function TemporaryDrawer() {
     );
 
     return (
-        <>
-            <IconButton className="hover:bg-secondary" onClick={toggleDrawer("right", true)} >
+        <div className="mr-1 sm:mr-4">
+            <IconButton className="block md:hidden hover:bg-secondary" onClick={toggleDrawer("right", true)} >
                 <MenuIcon className="text-primary md:hidden" />    
             </IconButton>
             <Drawer
@@ -81,6 +81,6 @@ export default function TemporaryDrawer() {
                 {list("right")}
 
             </Drawer>
-        </>
+        </div>
     );
 }

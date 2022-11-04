@@ -8,14 +8,14 @@ const Theme = ({text}) => {
     const { theme, toggleTheme } = useThemeContext();
 
     return (
-        <div className="text-xs tracking-wider text-primary flex">
+        <div className="text-xs tracking-wider text-primary flex ml-4">
             {theme === "Dark" ? (
-                <IconButton className="p-2 text-primary px-4 text-sm bg-primary round-none hover:bg-secondary" onClick={toggleTheme}>
-                    <Brightness5Icon className="icon py-1" fontSize="small" />
+                <IconButton className="rounded p-2 text-primary px-4 text-sm hover:text-accent" onClick={toggleTheme}>
+                    <Brightness5Icon className="icon py-1 hover:text-accent" fontSize="small" />
                     {text ? <span> Darkmode </span> : "" }
                 </IconButton>
             ) : (
-                <IconButton className="p-2 text-primary px-4 text-sm font-bold tracking-widest uppercase rounded-none hover:bg-secondary" onClick={toggleTheme} >
+                <IconButton className="p-2 text-primary px-4 text-sm font-bold tracking-widest uppercase hover:text-accent rounded" onClick={toggleTheme} >
                     <Brightness4Icon className="py-0.5 mr-1" fontSize="small" />
                     {text ? <span> Darkmode </span> : "" }
                 </IconButton>
