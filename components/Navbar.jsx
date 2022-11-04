@@ -15,7 +15,18 @@ import { IconButton } from "@mui/material";
 const Navbar = () => {
     const [activePage, setActivePage] = useState(false)
     const [hover, setHover] = useState(false)
+    const [scroll, setScroll] = useState(false)
 
+    const changeColor = () => {
+        if (window.scrollY > 90) {
+            setScroll(true)
+        } else {
+            setScroll(false)
+        }
+    }
+    if (typeof window !== "undefined") {
+        window.addEventListener("scroll", changeColor)
+    }
 
     const router = useRouter();
 
@@ -48,10 +59,13 @@ const Navbar = () => {
     ];
   
     return (
-        <AppBar position="static" className="bg-primary text-primary fixed left-0 top-0 w-full min-h-44 z-50">
+        <AppBar position="static" className={ scroll ?
+            "bg-secondary backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50 shadow-2xl shadow-[#9c89b1]":
+            "bg-secondary text-primary fixed left-0 top-0 w-full min-h-44 z-50 shadow-lg"
+        }>
             <Container maxWidth="xl" >
-                <Toolbar className="flex flex-col sm:flex-row py-6" disableGutters>
-                    <a href={"/"} className="cursor-pointer order-2 sm:order-1">
+                <Toolbar className="flex flex-col sm:flex-row py-6 max-w-7xl mx-auto" disableGutters>
+                    <a href={"/"} className="cursor-pointer order-2 sm:order-1 max-w-sm">
                         <Image
                             className=""
                             priority="true"
@@ -69,11 +83,11 @@ const Navbar = () => {
                                 {pages.map((page, i) => (
                                     <IconButton
                                         key={i}
-                                        className={"rounded text-sm text-primary font-semibold py-2 px-2 mx-2 uppercase tracking-widest"}
+                                        className={"hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase lg:tracking-widest"}
                                     >
                                         <Link href={page.url}>
-                                            <a className="hover:text-accent"> {page.name}</a>
-                                        </Link>      
+                                            <a className=""> {page.name}</a>
+                                        </Link>
                                     </IconButton>
                                 ))}
                         </Box>

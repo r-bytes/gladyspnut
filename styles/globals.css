@@ -71,9 +71,9 @@ a {
 
 .dark {
     --color-bg-primary: #222222;
-    --color-bg-secondary: #181818;
+    --color-bg-secondary: #rgba(34, 34, 34, .5);
     --color-bg-primary-accent: #9c89b1;
-    --color-bg-secondary-accent: #7C7483;
+    --color-bg-secondary-accent: rgba(156, 137, 177, .5);
     --color-text-primary: #dbdbdb;
     --color-text-secondary: #222222;
     --color-text-accent: #9c89b1;
@@ -83,7 +83,7 @@ a {
 
 .light {
     --color-bg-primary: #ffffff;
-    --color-bg-secondary: #e6e4e4;
+    --color-bg-secondary: #rgba(255, 255, 255, .5);
     --color-text-primary: #222222;
     --color-text-secondary: #666666;
     --color-text-accent: #9c89b1;
