@@ -10,7 +10,8 @@ import TemporaryDrawer from "./TemporaryDrawer";
 import { useEffect, useState } from "react";
 import Theme from "./Theme"
 import { useRouter } from "next/router";
-import { IconButton } from "@mui/material";
+import { Divider, IconButton } from "@mui/material";
+
 
 const Navbar = () => {
     const [activePage, setActivePage] = useState(false)
@@ -30,9 +31,6 @@ const Navbar = () => {
 
     const router = useRouter();
 
-    console.log(router.pathname);
-
-
     useEffect(() => {
         if (router.pathname === "/about-me") {
             setActivePage("About")
@@ -45,11 +43,6 @@ const Navbar = () => {
             setActivePage("Contact")
         }
     }, [router])
-    
-
-
-
-    
 
     const pages = [
         {name: "About", url: "/about-me"}, 
@@ -60,8 +53,8 @@ const Navbar = () => {
   
     return (
         <AppBar position="static" className={ scroll ?
-            "bg-secondary backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50 shadow-2xl shadow-[#9c89b1]":
-            "bg-secondary text-primary fixed left-0 top-0 w-full min-h-44 z-50 shadow-lg"
+            "bg-secondary backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50":
+            "bg-secondary text-primary fixed left-0 top-0 w-full min-h-44 z-50 drop-shadow-2xl shadow-[#9c89b1]"
         }>
             <Container maxWidth="xl" >
                 <Toolbar className="flex flex-col sm:flex-row py-6 max-w-7xl mx-auto" disableGutters>
@@ -83,11 +76,16 @@ const Navbar = () => {
                                 {pages.map((page, i) => (
                                     <IconButton
                                         key={i}
-                                        className={"hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase lg:tracking-widest"}
+                                        className={"relative hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase lg:tracking-widest"}
                                     >
-                                        <Link href={page.url}>
-                                            <a className=""> {page.name}</a>
-                                        </Link>
+                                        <div className="flex justify-center">
+                                            <Link href={page.url}>
+                                                <a> {page.name}</a>
+                                            </Link>
+                                            {activePage === page.name ? (
+                                                <Divider className="absolute top-10 h-[2px] w-[90%] bg-button" />
+                                            ) : ""}
+                                        </div>
                                     </IconButton>
                                 ))}
                         </Box>
