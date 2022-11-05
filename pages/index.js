@@ -1,10 +1,18 @@
 import Hero from "@components/Hero";
+import { Button, ButtonGroup } from "@mui/material";
 import { Footer, Header } from "components";
 import Head from "next/head";
+import { useEffect, useRef } from "react";
+import CanvasDraw from "../components/CanvasDraw"
+import drawData from "../constants/drawData.json"
+
+
 
 export default function Home() {
+    const testRef = useRef(null);
+
     return (
-        <div>
+        <div className="overflow-hidden flex flex-col items-center">
             <Head>
                 <title> Gladys P.Nut </title>
                 <meta
@@ -13,7 +21,11 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Hero heading={"Gladys P. Nut"} message={"Artist and Designer, lover of everything cute"} />
+            <Hero testRef={testRef} heading={"Gladys P. Nut"} message={`Artist and Designer based in the Netherlands, lover of everything cute. \n Specializing in character design and everything kawaii!`} />
+            
+            <div ref={testRef}>
+                <CanvasDraw ref={canvasDraw => (CanvasDraw.saveableCanvas = canvasDraw)} className="rounded mx-auto" hideGrid={true} brushRadius={4} lazyRadius={10} gridSizeX={500} />
+            </div>
         </div>
     );
 }
