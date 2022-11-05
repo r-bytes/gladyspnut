@@ -23,6 +23,7 @@ a {
 }
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* tailwind customizations */
@@ -69,14 +70,18 @@ a {
     @apply text-primary text-2xl mr-2;
 }
 
+/* .animationInf {
+    @apply animateDown infinite 1.5s
+} */
+
 .dark {
     --color-bg-primary: #222222;
-    --color-bg-secondary: #rgba(34, 34, 34, .5);
+    --color-bg-secondary: #rgba(1, 1, 1, .5);
     --color-bg-primary-accent: #9c89b1;
     --color-bg-secondary-accent: rgba(156, 137, 177, .5);
     --color-text-primary: #dbdbdb;
     --color-text-secondary: #222222;
-    --color-text-accent: #9c89b1;
+    --color-text-accent: #a17bc9;
     --color-bg-input: #4a5361;
     --color-bg-button: #9c89b1;
 }
