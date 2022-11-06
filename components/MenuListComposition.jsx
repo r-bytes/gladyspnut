@@ -10,8 +10,9 @@ import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
 import { Divider, IconButton } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function MenuListComposition() {
+export default function MenuListComposition({ activePage }) {
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
     const [hover, setHover] = useState(false)
@@ -59,6 +60,9 @@ export default function MenuListComposition() {
                     onClick={handleToggle}
                     onMouseEnter={() => setHover(true)}
                 >
+                {activePage ===  "Work" ? (
+                    <Divider className="absolute top-10 h-[2px] w-[90%] bg-button" />
+                ) : ""}
                 <span className="hover:text-accent text-xs lg:text-sm">
                     Work
                     <KeyboardArrowDownIcon className="ml-1" />
@@ -71,7 +75,7 @@ export default function MenuListComposition() {
                     placement="bottom-start"
                     transition
                     disablePortal
-                    className="z-50"
+                    className="z-50 rounded-lg"
                 >
                     {({ TransitionProps, placement }) => (
                         <Grow
@@ -82,15 +86,16 @@ export default function MenuListComposition() {
                                         ? "top"
                                         : "bottom",
                             }}
+                            className="rounded-lg bg-primary"
                         >
-                            <Paper>
-                                <ClickAwayListener onClickAway={handleClose}>
+                            <Paper className="rounded-lg">
+                                <ClickAwayListener onClickAway={handleClose} className="rounded-lg">
                                     <MenuList
                                         autoFocusItem={open}
                                         id="composition-menu"
                                         aria-labelledby="composition-button"
                                         onKeyDown={handleListKeyDown}
-                                        className="bg-primary text-primary flex flex-col justify-center items-start shadow-2xl p-0"
+                                        className="bg-primary text-primary flex flex-col justify-center items-start shadow-2xl p-0 rounded-lg"
                                     >
                                         
                                         <MenuItem

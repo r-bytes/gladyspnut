@@ -38,9 +38,10 @@ const Navbar = () => {
             setActivePage("Commission")
         } else if (router.pathname === "https://cutiesquad.com") {
             setActivePage(false)
-            
         } else if (router.pathname === "/contact") {
             setActivePage("Contact")
+        } else {
+            setActivePage("Work")
         }
     }, [router])
 
@@ -54,7 +55,7 @@ const Navbar = () => {
     return (
         <AppBar position="static" className={ scroll ?
             "bg-secondary backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50":
-            "bg-secondary text-primary fixed left-0 top-0 w-full min-h-44 z-50 drop-shadow-2xl shadow-[#9c89b1]"
+            "bg-secondary backdrop-blur-2xl text-primary fixed left-0 top-0 w-full min-h-44 z-50 "
         }>
             <Container maxWidth="xl" >
                 <Toolbar className="flex flex-col sm:flex-row py-6 max-w-7xl mx-auto" disableGutters>
@@ -71,7 +72,7 @@ const Navbar = () => {
                     
                     <Container maxWidth="sm" className="mr-0 flex items-center justify-end max-w-fit order-1 sm:order-1 pr-0">
                         <Box className="hidden md:flex md:justify-between" >
-                            <MenuListComposition />
+                            <MenuListComposition activePage={activePage} />
                                 
                                 {pages.map((page, i) => (
                                     <IconButton

@@ -22,7 +22,7 @@ const Instagram = () => {
 
     return (
         <div>
-            <div className="container max-w-[1280px]    px-12 md:px-16 sm:max-w-5xl md:max-w-3xl lg:max-w-4xl 2xl:max-w-7xl         mx-auto grid place-items-center sm:place-items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
+            <div className="container max-w-[1280px] bg-card rounded-xl my-32 backdrop-blur-3xl shadow-2xl  px-12 md:px-16 sm:max-w-5xl md:max-w-3xl lg:max-w-4xl 2xl:max-w-7xl         mx-auto grid place-items-center sm:place-items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
                 <h1 className="col-span-full text-5xl font-bold mb-16 mt-12"> {"Instagram Feed"} </h1>
                     {images?.map(i => (
                         <a className="mx-auto" key={i.id} href={i.permalink}>

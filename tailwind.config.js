@@ -11,6 +11,7 @@ module.exports = {
                 primaryAccent: "var(--color-bg-primary-accent)",
                 secondaryAccent: "var(--color-bg-secondary-accent)",
                 button: "var(--color-bg-button)",
+                card: "var(--color-bg-card)",
             },
             textColor: {
                 accent: "var(--color-text-accent)",

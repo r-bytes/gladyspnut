@@ -3,7 +3,7 @@ import { Button, ButtonGroup } from "@mui/material";
 import { Footer, Header } from "components";
 import Head from "next/head";
 import { useEffect, useRef } from "react";
-import CanvasDraw from "../components/CanvasDraw"
+import CanvasDrawFC from "../components/CanvasDrawFC"
 import drawData from "../constants/drawData.json"
 
 
@@ -22,9 +22,8 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Hero testRef={testRef} heading={"Gladys P. Nut"} message={`Artist and Designer based in the Netherlands, lover of everything cute. \n Specializing in character design and everything kawaii!`} />
-            
             <div ref={testRef}>
-                <CanvasDraw ref={canvasDraw => (CanvasDraw.saveableCanvas = canvasDraw)} className="rounded mx-auto" hideGrid={true} brushRadius={4} lazyRadius={10} gridSizeX={500} />
+                <CanvasDrawFC ref={canvasDraw => (CanvasDrawFC.saveableCanvas = canvasDraw)} className="rounded mx-auto" hideGrid={true} brushRadius={4} lazyRadius={10} gridSizeX={500} />
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ const Commisions = () => {
     return (
         <GridImage 
             title={"Commisions"} 
-            images={selectedImages}     
+            images={selectedImages}
         />
     );
 };
