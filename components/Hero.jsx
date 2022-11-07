@@ -1,11 +1,12 @@
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import Image from "next/image"
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { Parallax, Background } from 'react-parallax';
 
-const Hero = ({ heading, message, testRef }) => {
-    const scrollToElement = () => testRef.current.scrollIntoView({ behavior: 'smooth', duration: 3000, block: "start" });
+const Hero = ({ heading, message }) => {
+    const scrollToElement = () => buttonRef.current.scrollIntoView({ behavior: 'smooth', duration: 3000, block: "start" });
     const [scroll, setScroll] = useState(false)
+    const buttonRef = useRef()
 
     const hideArrow = () => {
         if (window.scrollY > 90) {
@@ -30,11 +31,11 @@ const Hero = ({ heading, message, testRef }) => {
                         </React.Fragment>
                     ))} 
                 </p>
-                <button className="rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-button hover:text-secondary hover:border-none"> book </button>
+                <Button className="text-primary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent hover:text-primary bg-button border-none "> book </Button>
             </div>
             {scroll ? ("") : (
-                <IconButton className="flex items-center justify-center mb-8" onClick={scrollToElement}>
-                    <Image alt="arrowDown" src={"/assets/down-arrow.svg"} height={30} width={30} className="animate-bounce cursor-pointer"  />
+                <IconButton className="flex items-center justify-center mb-8 bg-card hover:bg-secondary shadow-2xl" onClick={scrollToElement}>
+                    <Image  alt="arrowDown" src={"/assets/down-arrow.svg"} height={30} width={30} className="animate-bounce cursor-pointer"  />
                 </IconButton>
             )}
         </div>

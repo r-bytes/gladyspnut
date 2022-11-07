@@ -53,50 +53,45 @@ const Navbar = () => {
     ];
   
     return (
-        <AppBar position="static" className={ scroll ?
-            "bg-secondary backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50":
-            "bg-secondary backdrop-blur-2xl text-primary fixed left-0 top-0 w-full min-h-44 z-50 "
+        <div className={ !scroll ?
+            "bg-secondary backdrop-blur-2xl text-primary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center" :
+            "bg-secondary backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center"
         }>
-            <Container maxWidth="xl" >
-                <Toolbar className="flex flex-col sm:flex-row py-6 max-w-7xl mx-auto" disableGutters>
-                    <a href={"/"} className="cursor-pointer order-2 sm:order-1 max-w-sm">
-                        <Image
-                            className=""
-                            priority="true"
-                            src="/assets/logo.png"
-                            alt="gladys.pnut"
-                            width={300}
-                            height={110}
-                        />
-                    </a>
-                    
-                    <Container maxWidth="sm" className="mr-0 flex items-center justify-end max-w-fit order-1 sm:order-1 pr-0">
-                        <Box className="hidden md:flex md:justify-between" >
-                            <MenuListComposition activePage={activePage} />
-                                
-                                {pages.map((page, i) => (
-                                    <IconButton
-                                        key={i}
-                                        className={"relative hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase lg:tracking-widest"}
-                                    >
-                                        <div className="flex justify-center">
-                                            <Link href={page.url}>
-                                                <a> {page.name}</a>
-                                            </Link>
-                                            {activePage === page.name ? (
-                                                <Divider className="absolute top-10 h-[2px] w-[90%] bg-button" />
-                                            ) : ""}
-                                        </div>
-                                    </IconButton>
-                                ))}
-                        </Box>
-                        <Theme />
+            <Link href={"/"}>
+                <Image
+                    className="w-full h-60 object-cover cursor-pointer"
+                    priority="true"
+                    src="/assets/logo.png"
+                    alt="gladys.pnut"
+                    width={300}
+                    height={110}
+                />
+            </Link>
 
-                        <TemporaryDrawer />
-                    </Container>
-                </Toolbar>
-            </Container>
-        </AppBar>
+            {/* navbar && hamburger */}
+            <div className="">
+
+                <div className="hidden md:flex md:items-center md:justify-between px-4 space-x-1 lg:space-x-4" >
+                    {/* dropdown */}
+                    <MenuListComposition activePage={activePage} />
+                    {/* nav items */}
+                    {pages.map((page, i) => (
+                        <IconButton key={i} className={"relative hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase"}>
+                            <div className="">
+                                <Link href={page.url}>
+                                    {page.name}
+                                </Link>
+                                {activePage === page.name ? (
+                                    <Divider className="absolute top-10 h-[2px] w-[90%] bg-button" />
+                                ) : ""}
+                            </div>
+                        </IconButton>
+                    ))}
+                <Theme />
+                </div>
+                <TemporaryDrawer />
+            </div>
+        </div>
     )
 }
 export default Navbar

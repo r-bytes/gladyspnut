@@ -90,17 +90,17 @@ a {
 }
 
 .light {
-    --color-bg-primary: #ffffff;
+    --color-bg-primary: #ece9e9;
     /* --color-bg-y: rgba(255, 255, 255, .7); */
-    --color-bg-secondary: rgba(217, 109, 23secondar1, 0.054);
-    --color-bg-primary-accent: #9c89b1;
+    --color-bg-secondary: rgba(217, 109, 231, 0.054);
+    --color-bg-primary-accent: #7831c4;
     --color-bg-secondary-accent: rgba(156, 137, 177, .7);
     
     --color-text-primary: #222222;
     --color-text-secondary: #fbfbfb;
     --color-text-accent: #9c89b1;
     --color-bg-input: #4a5361;
-    --color-bg-button: #9c89b1;
+    --color-bg-button: #a688c6;
     --color-bg-card: rgba(214, 157, 189, 0.054);
 }
 
