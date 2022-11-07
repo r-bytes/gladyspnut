@@ -1,11 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import MenuListComposition from "./MenuListComposition"
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import TemporaryDrawer from "./TemporaryDrawer";
 import { useEffect, useState } from "react";
 import Theme from "./Theme"
@@ -15,7 +10,6 @@ import { Divider, IconButton } from "@mui/material";
 
 const Navbar = () => {
     const [activePage, setActivePage] = useState(false)
-    const [hover, setHover] = useState(false)
     const [scroll, setScroll] = useState(false)
 
     const changeColor = () => {
@@ -57,7 +51,7 @@ const Navbar = () => {
             "bg-secondary backdrop-blur-2xl text-primary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center" :
             "bg-secondary backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center"
         }>
-            <Link href={"/"}>
+            <a href={"/"}>
                 <Image
                     className="w-full h-60 object-cover cursor-pointer"
                     priority="true"
@@ -66,7 +60,7 @@ const Navbar = () => {
                     width={300}
                     height={110}
                 />
-            </Link>
+            </a>
 
             {/* navbar && hamburger */}
             <div className="">

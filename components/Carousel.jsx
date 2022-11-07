@@ -53,13 +53,13 @@ const Carousel = ({ images }) => {
 
 
     return (
-        <div className="flex justify-center md:w-64  items-center text-center rounded-lg">
-            <div className="relative w-full rounded-lg">
-                <div className="carousel rounded-lg">
+        <div className="flex justify-center md:w-64  items-center text-center rounded">
+            <div className="relative w-full rounded">
+                <div className="carousel rounded">
                     {sliderControl(true)}
                         {images?.items.map((img, i) => (
-                            <div className="w-full flex-shrink-0 left-0 right-0 rounded-lg" key={img.id} ref={refs[i]}>
-                                <Image src={img.imageUrl} className=" object-cover rounded-lg" width={400} height={400} alt="#" />
+                            <div className="w-full flex-shrink-0 left-0 right-0 rounded" key={img.id} ref={refs[i]}>
+                                <Image src={img.imageUrl} className=" object-cover rounded" width={400} height={400} alt="#" />
                             </div>
                         ))}
                     {sliderControl()}

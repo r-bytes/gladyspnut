@@ -1,10 +1,8 @@
 import Hero from "@components/Hero";
 import Head from "next/head";
 import { DrawChallenge } from "components";
-import { useRef } from "react";
 
 export default function Home() {
-    const buttonRef = useRef()
     return (
         <div className="overflow-hidden flex flex-col items-center">
             <Head>
@@ -15,9 +13,9 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Hero ref={buttonRef} heading={"Gladys P. Nut"} message={`Artist and Designer based in the Netherlands, lover of everything cute. \n Specializing in character design and everything kawaii!`} />
+            <Hero heading={"Gladys P. Nut"} message={`Artist and Designer based in the Netherlands, lover of everything cute. \n Specializing in character design and everything kawaii!`} />
             {/* !TODO awesome slide */}
-            <DrawChallenge ref={buttonRef} className="rounded mx-auto" />
+            <DrawChallenge className="rounded mx-auto" />
         </div>
     );
 }

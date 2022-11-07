@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import Button from "@mui/material/Button";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Grow from "@mui/material/Grow";
 import Paper from "@mui/material/Paper";
@@ -10,7 +9,6 @@ import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
 import { Divider, IconButton } from "@mui/material";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export default function MenuListComposition({ activePage }) {
     const [open, setOpen] = useState(false);
@@ -51,7 +49,7 @@ export default function MenuListComposition({ activePage }) {
         <Stack direction="row" spacing={2}>
             <div className="flex items-center justify-center">
                 <IconButton
-                    className={"rounded text-primary py-2 px-2 mx-2 text-sm font-semibold uppercase tracking-widest"}
+                    className={"rounded text-primary py-2 px-1 mx-1 text-sm font-semibold uppercase tracking-widest"}
                     ref={anchorRef}
                     id="composition-button"
                     aria-controls={open ? "composition-menu" : undefined}
@@ -60,13 +58,13 @@ export default function MenuListComposition({ activePage }) {
                     onClick={handleToggle}
                     onMouseEnter={() => setHover(true)}
                 >
-                {activePage ===  "Work" ? (
-                    <Divider className="absolute top-10 h-[2px] w-[90%] bg-button" />
-                ) : ""}
-                <span className="hover:text-accent text-xs lg:text-sm">
-                    Work
-                    <KeyboardArrowDownIcon className="ml-1" />
-                </span>
+                    {activePage ===  "Work" ? (
+                        <Divider className="absolute top-10 h-[2px] w-[90%] bg-button" />
+                    ) : ""}
+                    <span className="hover:text-accent text-xs lg:text-sm">
+                        Work
+                        <KeyboardArrowDownIcon className="ml-1" />
+                    </span>
                 </IconButton>
                 <Popper
                     open={open}
@@ -75,7 +73,7 @@ export default function MenuListComposition({ activePage }) {
                     placement="bottom-start"
                     transition
                     disablePortal
-                    className="z-50 rounded-lg"
+                    className="z-50 rounded"
                 >
                     {({ TransitionProps, placement }) => (
                         <Grow
@@ -86,16 +84,16 @@ export default function MenuListComposition({ activePage }) {
                                         ? "top"
                                         : "bottom",
                             }}
-                            className="rounded-lg bg-primary"
+                            className="rounded bg-primary"
                         >
-                            <Paper className="rounded-lg">
-                                <ClickAwayListener onClickAway={handleClose} className="rounded-lg">
+                            <Paper className="rounded">
+                                <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList
                                         autoFocusItem={open}
                                         id="composition-menu"
                                         aria-labelledby="composition-button"
                                         onKeyDown={handleListKeyDown}
-                                        className="bg-primary text-primary flex flex-col justify-center items-start shadow-2xl p-0 rounded-lg"
+                                        className="bg-primary text-primary flex flex-col justify-center items-start shadow-2xl p-0 rounded"
                                     >
                                         
                                         <MenuItem
