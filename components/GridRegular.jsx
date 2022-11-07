@@ -8,7 +8,7 @@ const GridRegular = ({ title, subTitle, intro, image, socials, insta, rootClass}
                 <h1 className="text-5xl font-bold mb-16 mt-12 text-center sm:text-left"> {title} </h1>
                 <h3 className="mb-4 font-semibold text-center sm:text-left"> {subTitle} </h3>
                 <p className="leading-loose tracking-wider text-sm text-center sm:text-left">
-                    {intro.split("\n").map((line, index) => (
+                    {intro?.split("\n").map((line, index) => (
                         <React.Fragment key={index}>
                             {line}
                             <br />
