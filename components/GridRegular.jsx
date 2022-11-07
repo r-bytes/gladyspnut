@@ -6,7 +6,14 @@ const GridRegular = ({ title, subTitle, intro, rootClass, profilePicture, artist
         <div className={rootClass}>
             <div className="">
                 <h1 className="text-5xl font-bold mb-16 mt-12 text-center sm:text-left"> {title} </h1>
-                <h3 className="mb-8 font-light text-xl tracking-wider text-center sm:text-left"> {subTitle} </h3>
+                <p className="mb-8 font-light text-xl tracking-wider text-center sm:text-left">
+                    {subTitle?.split("\n").map((line, index) => (
+                        <React.Fragment key={index}>
+                            {line}
+                            <br />
+                        </React.Fragment>
+                    ))}
+                </p>
                 <p className="leading-loose tracking-wider text-xs text-center sm:text-left">
                     {intro?.split("\n").map((line, index) => (
                         <React.Fragment key={index}>
