@@ -29,7 +29,9 @@
     "sanity": "^2.33.2",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.3.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/r-bytes/gladyspnut.git"
