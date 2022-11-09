@@ -1,42 +1,22 @@
-import Image from "next/image";
+import { GridImageItem } from ".";
 
-const GridImage = ({ title, images }) => {
-    const stack = [
-        "Photoshop", "Paint", "Illustrator"
-    ]
+const GridImage = ({ filteredImages }) => {
 
-    const selectedImages = images.map(i => (
-        <div key={i.id} className="group rounded max-w-md mx-auto flex flex-col">
-            {/* top card */}
-            <div className="rounded">
-                <h1 className="p-4"> Title </h1>
-                <Image
-                    className="rounded-t h-60 w-full object-cover group-hover:scale-105 group-hover:cursor-zoom-in transition-transform duration-300 ease-in-out"
-                    alt={i.imageUrl}
-                    key={i.id}
-                    src={i.imageUrl}
-                    width={500}
-                    height={500}    
-                />
-            </div>
-            {/* bottom card */}
-            <div className="flex flex-col justify-items-center flex-wrap items-center bg-card shadow-2xl rounded-b px-3">
-                <h3 className="my-4 dark:text-yellow-200 font-bold text-pink-900 block rounded tracking-widest"> Stack </h3>
-                <ul className="w-full text-sm flex items-center justify-center gap-2 flex-wrap pb-5">
-                {stack.map((tool, index) => (
-                    <li key={index} className="bg-secondaryAccent text-secondary dark:text-primary dark:bg-secondary py-1 px-3 rounded-full text-center"> {tool} </li>
-                ))}
-                </ul>
-            </div>
-        </div>
+    const cardImages = filteredImages.map(({_id, title, stackInfo, mainImage }) => (
+        <GridImageItem
+            key={_id}
+            _id={_id}
+            title={title}
+            mainImage={mainImage}
+            stackInfo={stackInfo}
+        />
     ))
         
     return (
         <div className="py-56 min-h-fit">
-            <h1 className="text-5xl font-bold mb-16 mt-12 text-center"> {title} </h1>
-            
+            <h1 className="text-5xl font-bold mb-16 mt-12 text-center"> {filteredImages[0].pageInfo.displayname} </h1>
             <div className="max-w-5xl bg-card shadow-2xl backdrop-blur-2xl rounded= sm:p-12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {selectedImages}
+                {cardImages}
             </div>
             
         </div>
