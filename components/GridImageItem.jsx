@@ -12,7 +12,8 @@ const GridImageItem = ({ _id, title, mainImage, stackInfo }) => {
                     alt={mainImage}
                     src={urlFor(mainImage).url()}
                     width={500}
-                    height={500}    
+                    height={500}
+                    priority={true}
                 />
             </div>
             {/* bottom card */}

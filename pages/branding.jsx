@@ -17,8 +17,9 @@ export const getServerSideProps = async () => {
             _type == "work" &&
             page[0]._ref == *[_type == "pages"][1]._id &&
             _type in ["work", "stack", "pages"]
-        ]{
+        ]| order(_createdAt asc){
             _id,
+            title,
             mainImage,
             author -> {
                 name,
