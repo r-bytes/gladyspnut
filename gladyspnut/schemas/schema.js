@@ -9,7 +9,7 @@ import blockContent from './blockContent'
 import category from './pages'
 import post from './post'
 import work from "./work"
-import about from "./about"
+import grid from "./grid"
 import commissions from "./commissions"
 import author from './author'
 import stack from "./stack"
@@ -26,7 +26,7 @@ export default createSchema({
     // in the studio.
     // post,
     work,
-    about,
+    grid,
     commissions,
     author,
     stack,
