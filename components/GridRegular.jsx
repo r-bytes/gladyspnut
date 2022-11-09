@@ -1,3 +1,4 @@
+import { Divider } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -14,6 +15,8 @@ const GridRegular = ({ title, subTitle, intro, rootClass, profilePicture, artist
                         </React.Fragment>
                     ))}
                 </p>
+                <Divider className="bg-zinc-100 dark:bg-zinc-700 max-w-lg mx-auto" />
+                <br />
                 <p className="leading-loose tracking-wider text-xs text-center sm:text-left">
                     {intro?.split("\n").map((line, index) => (
                         <React.Fragment key={index}>

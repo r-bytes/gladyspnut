@@ -49,7 +49,7 @@ export default function MenuListComposition({ activePage }) {
         <Stack direction="row" spacing={2}>
             <div className="flex items-center justify-center">
                 <IconButton
-                    className={"rounded text-primary py-2 px-1 mx-1 text-sm font-semibold uppercase tracking-widest"}
+                    className={"rounded text-primary py-2 px-1 mx-0 text-sm font-semibold uppercase tracking-widest"}
                     ref={anchorRef}
                     id="composition-button"
                     aria-controls={open ? "composition-menu" : undefined}
@@ -59,11 +59,11 @@ export default function MenuListComposition({ activePage }) {
                     onMouseEnter={() => setHover(true)}
                 >
                     {activePage ===  "Work" ? (
-                        <Divider className="absolute top-10 h-[2px] w-[90%] bg-button" />
+                        <Divider className="absolute top-10 h-[2px] left-1 w-[85%] bg-button" />
                     ) : ""}
-                    <span className="hover:text-accent text-xs lg:text-sm">
+                    <span className="hover:text-accent text-xs lg:text-sm flex items-center">
                         Work
-                        <KeyboardArrowDownIcon className="ml-1" />
+                        <KeyboardArrowDownIcon style={{padding: "0"}} fontSize="small" className="mx-0 pr-0" />
                     </span>
                 </IconButton>
                 <Popper

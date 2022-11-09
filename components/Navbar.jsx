@@ -71,12 +71,12 @@ const Navbar = () => {
                     {/* nav items */}
                     {pages.map((page, i) => (
                         <IconButton key={i} className={"relative hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase"}>
-                            <div className="">
+                            <div className="flex justify-center items-center">
                                 <Link href={page.url}>
                                     {page.name}
                                 </Link>
                                 {activePage === page.name ? (
-                                    <Divider className="absolute top-10 h-[2px] w-[90%] bg-button" />
+                                    <Divider className="absolute top-10 h-[2px] w-[80%] bg-button" />
                                 ) : ""}
                             </div>
                         </IconButton>
