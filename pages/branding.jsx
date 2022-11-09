@@ -1,5 +1,4 @@
 import { GridImage } from "@components/index";
-import images from "@images/images.json"
 import { sanityClient } from "sanity";
 
 const Branding = ({ filteredImages }) => {

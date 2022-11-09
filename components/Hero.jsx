@@ -1,7 +1,6 @@
 import { Button, IconButton } from "@mui/material";
 import Image from "next/image"
-import React, { useRef, useState } from "react"
-import { Parallax, Background } from 'react-parallax';
+import React, { useState } from "react"
 
 const Hero = ({ heading, message }) => {
     // const scrollToElement = () => buttonRef.current.scrollIntoView({ behavior: 'smooth', duration: 3000, block: "start" });

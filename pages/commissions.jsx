@@ -1,5 +1,4 @@
-import { GridImage, GridRegular } from "@components/index";
-import images from "@images/images.json"
+import { GridImage } from "@components/index";
 import { sanityClient } from "sanity";
 
 const Commisions = ({ filteredImages }) => {

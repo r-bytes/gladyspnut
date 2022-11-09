@@ -1,8 +1,6 @@
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import InstagramFeed  from 'react-ig-feed'
 import 'react-ig-feed/dist/index.css'
-import { Button } from "@mui/material";
 
 
 

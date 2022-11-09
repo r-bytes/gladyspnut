@@ -2,7 +2,7 @@ import React from "react";
 import { useThemeContext } from "../context/ThemeProvider";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
-import { Button, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 
 const Theme = ({ text }) => {
     const { theme, toggleTheme } = useThemeContext();

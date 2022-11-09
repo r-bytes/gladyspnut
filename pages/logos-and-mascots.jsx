@@ -1,9 +1,7 @@
 import { GridImage } from "@components/index";
-import images from "@images/images.json"
 import { sanityClient } from "sanity";
 
 const Logos = ({ filteredImages }) => {
-    // const selectedImages = images.filter(i => i.page === "logos")
     return (
         <GridImage
             filteredImages={filteredImages}
