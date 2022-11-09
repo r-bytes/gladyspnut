@@ -22,7 +22,7 @@ export default About;
 
 export const getServerSideProps = async () => {
     const query = `
-        *[_type == "about"][0] {
+        *[_type == "grid" && title == "About Me" ][0] {
             _id,
             title,
             subtitle,
