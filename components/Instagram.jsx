@@ -1,8 +1,5 @@
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import 'react-ig-feed/dist/index.css'
-
-
 
 const Instagram = () => {
     const [posts, setPosts] = useState([])

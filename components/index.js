@@ -1,4 +1,5 @@
 export { default as Footer } from "./Footer.jsx";
+export { default as Hero } from "./Hero.jsx";
 export { default as Theme } from "./Theme.jsx";
 export { default as Menu } from "./MenuListComposition.jsx";
 export { default as GridImage } from "./GridImage.jsx";

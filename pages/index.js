@@ -1,6 +1,6 @@
-import Hero from "@components/Hero";
+// import Hero from "@components/";
 import Head from "next/head";
-import { DrawChallenge } from "components";
+import { DrawChallenge, Hero } from "../components/index";
 
 export default function Home() {
     return (
