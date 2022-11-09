@@ -2,7 +2,7 @@ import { GridRegular, Instagram, SocialIcons } from "@components/index";
 import artist from "@images/artist.webp"
 import { sanityClient, urlFor } from "sanity";
 
-const About = ({ about: { _id, title, subtitle, intro, author } }) => {
+const About = ({ about: {_id, title, subtitle, intro, author} }) => {
     return (
         <>
             <GridRegular

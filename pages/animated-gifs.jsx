@@ -1,15 +1,47 @@
 import { GridImage } from "@components/index";
 import images from "@images/images.json"
+import { sanityClient } from "sanity";
 
-const AnimatedGifs = () => {
-    const selectedImages = images.filter(i => i.page === "animatedGifs")
+const AnimatedGifs = ({ filteredImages }) => {
 
     return (
         <GridImage
-            title={"Animated Gifs"}
-            images={selectedImages}
+            filteredImages={filteredImages}
         />
     );
 };
 
 export default AnimatedGifs;
+
+export const getServerSideProps = async () => {
+    const query = `
+        *[
+            _type == "work" &&
+            page[0]._ref == *[_type == "pages"][5]._id &&
+            _type in ["work", "stack", "pages"]
+        ]{
+            _id,
+            mainImage,
+            author -> {
+                name,
+                image,
+            },
+            "pageInfo": page[0]-> {
+                _id,
+                title,
+                displayname,
+            },
+            "stackInfo": stack[]-> {
+                _id,
+                title,
+            },
+        }
+    `;
+    const filteredImages = await sanityClient.fetch(query)
+
+    return {
+        props: {
+            filteredImages,
+        },
+    }
+}

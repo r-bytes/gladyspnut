@@ -2,7 +2,7 @@ import { GridImageItem } from ".";
 
 const GridImage = ({ filteredImages }) => {
 
-    const cardImages = filteredImages?.map(({_id, title, stackInfo, mainImage }) => (
+    const cardImages = filteredImages?.map(({ _id, title, stackInfo, mainImage }) => (
         <GridImageItem
             key={_id}
             _id={_id}

@@ -1,15 +1,46 @@
-import { GridRegular } from "@components/index";
+import { GridImage, GridRegular } from "@components/index";
 import images from "@images/images.json"
+import { sanityClient } from "sanity";
 
-const Commisions = () => {
-    const selectedImages = images.filter(i => i.page === "commissions")
-
+const Commisions = ({ filteredImages }) => {
     return (
-        <GridRegular
-            title={"Commisions"} 
-            images={selectedImages}
+        <GridImage
+            filteredImages={filteredImages}
         />
     );
 };
 
 export default Commisions;
+
+export const getServerSideProps = async () => {
+    const query = `
+        *[
+            _type == "work" &&
+            page[0]._ref == *[_type == "pages"][6]._id &&
+            _type in ["work", "stack", "pages"]
+        ]{
+            _id,
+            mainImage,
+            author -> {
+                name,
+                image,
+            },
+            "pageInfo": page[0]-> {
+                _id,
+                title,
+                displayname,
+            },
+            "stackInfo": stack[]-> {
+                _id,
+                title,
+            },
+        }
+    `;
+    const filteredImages = await sanityClient.fetch(query)
+
+    return {
+        props: {
+            filteredImages,
+        },
+    }
+}
