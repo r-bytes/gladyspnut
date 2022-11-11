@@ -1,7 +1,6 @@
 // import Hero from "@components/";
 import Head from "next/head";
 import { DrawChallenge, Hero } from "../components/index";
-import AwesomeSlider from 'react-awesome-slider';
 import { useRef } from "react";
 
 export default function Home() {
