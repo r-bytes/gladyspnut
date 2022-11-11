@@ -1,9 +1,10 @@
 import { Button, IconButton } from "@mui/material";
 import Image from "next/image"
+import { useRouter } from "next/router";
 import React, { useState } from "react"
 
-const Hero = ({ heading, message }) => {
-    // const scrollToElement = () => buttonRef.current.scrollIntoView({ behavior: 'smooth', duration: 3000, block: "start" });
+
+const Hero = ({ heading, message, drawRef }) => {
     const [scroll, setScroll] = useState(false)
 
     const hideArrow = () => {
@@ -16,7 +17,11 @@ const Hero = ({ heading, message }) => {
     if (typeof window !== "undefined") {
         window.addEventListener("scroll", hideArrow)
     }
-    
+
+    const handleClick = () => {
+        drawRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+
     return (
         <div className="flex flex-col items-center justify-between h-screen">
             <div className="flex flex-col items-center mt-72 p-24 rounded bg-card backdrop-blur-xl shadow-2xl">
@@ -29,11 +34,11 @@ const Hero = ({ heading, message }) => {
                         </React.Fragment>
                     ))} 
                 </p>
-                <Button className="text-primary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent hover:text-primary bg-button border-none "> book </Button>
+                <Button className="text-secondary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent bg-button border-none "> book </Button>
             </div>
             {scroll ? ("") : (
-                <IconButton className="flex items-center justify-center mb-8 bg-card hover:bg-secondary shadow-2xl">
-                    <Image  alt="arrowDown" src={"/assets/down-arrow.svg"} height={30} width={30} className="animate-bounce cursor-pointer"  />
+                <IconButton className="flex items-center justify-center mb-8 bg-card hover:bg-secondary shadow-2xl" onClick={()=> handleClick()}>
+                    <Image className="animate-bounce cursor-pointer" src={"/assets/down-arrow.svg"} alt="arrowDown" height={30} width={30} />
                 </IconButton>
             )}
         </div>
