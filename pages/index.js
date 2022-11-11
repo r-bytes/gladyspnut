@@ -1,10 +1,14 @@
 // import Hero from "@components/";
 import Head from "next/head";
 import { DrawChallenge, Hero } from "../components/index";
+import AwesomeSlider from 'react-awesome-slider';
+import { useRef } from "react";
 
 export default function Home() {
+    const drawRef = useRef(null)
+
     return (
-        <div className="overflow-hidden flex flex-col items-center">
+        <div className="">
             <Head>
                 <title> Gladys P.Nut </title>
                 <meta
@@ -13,9 +17,12 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Hero heading={"Gladys P. Nut"} message={`Artist and Designer based in the Netherlands, lover of everything cute. \n Specializing in character design and everything kawaii!`} />
-            {/* !TODO awesome slide */}
-            <DrawChallenge className="rounded mx-auto" />
+            <Hero
+                heading={"Gladys P. Nut"}
+                message={`Artist and Designer based in the Netherlands, lover of everything cute. \n Specializing in character design and everything kawaii!`}
+                drawRef={drawRef}
+            />
+            <DrawChallenge ref={drawRef} />
         </div>
     );
 }
