@@ -15,7 +15,7 @@ const GridImage = ({ filteredImages }) => {
     return (
         <div className="py-56 min-h-fit">
             <h1 className="text-5xl font-bold mb-16 mt-12 text-center"> {filteredImages[0]?.pageInfo.displayname} </h1>
-            <div className="max-w-5xl bg-card shadow-2xl backdrop-blur-2xl rounded= sm:p-12 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="mx-auto max-w-4xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl bg-card shadow-2xl backdrop-blur-2xl rounded= sm:p-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
                 {cardImages}
             </div>
             

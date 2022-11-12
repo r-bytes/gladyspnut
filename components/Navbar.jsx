@@ -51,7 +51,7 @@ const Navbar = () => {
     return (
         <div className={ !scroll ?
             "bg-secondary backdrop-blur-2xl text-primary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center" :
-            "bg-secondary backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center"
+            "bg-transparant backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center"
         }>
             <a href={"/"}>
                 <Image

@@ -1,28 +1,17 @@
 import { Button } from "@mui/material"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { useForm, SubmitHandler } from "react-hook-form"
 
 const Form = () => {
     const { register, handleSubmit, formState: {errors} } = useForm()
     const [submitted, setSubmitted] = useState(false)
 
-    const post = {
-        id: 1
-    }
+    const nameRef = useRef()
+    const emailRef = useRef()
+    const commentRef = useRef()
 
     const onSubmit = (data) => {
-        fetch("/api/createComment", {
-            method: "POST",
-            body: JSON.stringify(data),
-        })
-        .then((a) => {
-            console.log(a)
-            setSubmitted(true)
-        })
-        .catch((err) => {
-            console.log(err)
-            setSubmitted(false)
-        })
+
     }
 
     return (
@@ -33,23 +22,17 @@ const Form = () => {
             </div>
         ) : (
             <>
+                <h2 className="pt-56 text-center text-5xl font-bold mb-8"> Contact </h2>
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="rounded flex flex-col p-5 my-10 max-w-4xl mx-auto bg-card backdrop-blur-3xl shadow-2xl px-12 pt-56 pb-24 mb-24"
+                    className="rounded flex flex-col p-5 my-10 max-w-4xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl mx-auto bg-card backdrop-blur-3xl shadow-2xl px-12 py-24 mb-24"
                     >
-                    <h2 className="text-5xl font-bold mb-8"> Contact </h2>
-                
-                    <input
-                        {...register("_id")}
-                        type="hidden"
-                        name="_id"
-                        value={post?._id}
-                    />
 
                     <label className="block mb-5" htmlFor="name">
                         <span className="text-primary"> Name </span>
                         <input
                             {...register("name", {required: true})}
+                            
                             className="shadow-lg border rounded py-2 px-3 form-input mt-1 block w-full outline-none ring-[#7831c4] focus:ring"
                             id="name"
                             type="text"
