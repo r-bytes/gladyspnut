@@ -10,7 +10,7 @@ import Stack from "@mui/material/Stack";
 import { Divider, IconButton } from "@mui/material";
 import Link from "next/link";
 
-export default function MenuListComposition({ activePage }) {
+export default function MenuDropDown({ activePage }) {
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
     const [hover, setHover] = useState(false)
