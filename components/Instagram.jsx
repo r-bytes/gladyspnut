@@ -15,7 +15,7 @@ const Instagram = () => {
     const carouselImages = posts?.filter(p => p.media_type === "CAROUSEL_ALBUM")
 
     return (
-        <div className="max-w-4xl md:w-5/6 mx-auto  bg-card rounded my-32 backdrop-blur-3xl shadow-2xl px-12 grid place-items-center sm:place-items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
+        <div className="md:max-w-4xl lg:max-w-5xl xl:max-w-7xl max-w-7xl mx-auto bg-card rounded my-32 backdrop-blur-3xl shadow-2xl px-12 grid place-items-center sm:place-items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
             <h1 className="col-span-full text-5xl font-bold mb-16 mt-16"> Instagram Feed </h1>
                 {images?.map(i => (
                     <a className="mx-auto hover:scale-105" key={i.id} href={i.permalink}>

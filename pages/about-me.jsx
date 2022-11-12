@@ -1,14 +1,14 @@
-import { GridRegular, Instagram, SocialIcons } from "@components/index";
+import { Instagram, SocialIcons, Wrapper } from "@components/index";
 import { sanityClient, urlFor } from "sanity";
 
 const About = ({ about: {_id, title, subtitle, intro, author} }) => {
     return (
         <>
-            <GridRegular
+            <Wrapper
                 title={title}
                 subTitle={subtitle}
                 intro={intro}
-                rootClass={"pt-56 sm:pt-24 sm:pt-32 md:max-w-2xl lg:max-w-4xl mx-auto   mx-auto lg:flex justify-center gap-16 bg-card backdrop-blur-2xl rounded shadow-2xl px-12 sm:py-24 pt-44 sm:pt-24 sm:mt-24 max-w-4xl shadow-2xl mx-auto mb-16"}
+                rootClass={"pt-12 px-12 pt-44 py-24 sm:pt-24 sm:mt-24 sm:pt-24 sm:pt-32 max-w-4xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl mx-auto lg:flex justify-center gap-16  bg-card backdrop-blur-2xl rounded shadow-2xl shadow-2xl"}
                 profilePicture
                 artist={urlFor(author.image).url()}
                 socials={<SocialIcons />}

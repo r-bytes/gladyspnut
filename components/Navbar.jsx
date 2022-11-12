@@ -1,16 +1,18 @@
 import Image from "next/image"
 import Link from "next/link"
-import MenuListComposition from "./MenuListComposition"
+import MenuDropDown from "./MenuDropDown"
 import TemporaryDrawer from "./TemporaryDrawer";
 import { useEffect, useState } from "react";
 import Theme from "./Theme"
 import { useRouter } from "next/router";
 import { Divider, IconButton } from "@mui/material";
+import { useThemeContext } from "../context/ThemeProvider";
 
 
 const Navbar = () => {
     const [activePage, setActivePage] = useState(false)
     const [scroll, setScroll] = useState(false)
+    const { theme } = useThemeContext();
 
     const changeColor = () => {
         if (window.scrollY > 90) {
@@ -53,12 +55,12 @@ const Navbar = () => {
         }>
             <a href={"/"}>
                 <Image
-                    className="w-full h-60 object-cover cursor-pointer"
+                    className="w-full object-cover cursor-pointer"
                     priority="true"
-                    src="/assets/logo.png"
+                    src={theme === "dark" ? "/assets/logo_dark.png" : "/assets/logo.png"}
                     alt="gladys.pnut"
-                    width={300}
-                    height={110}
+                    width={330}
+                    height={130}
                 />
             </a>
 
@@ -67,7 +69,7 @@ const Navbar = () => {
 
                 <div className="hidden md:flex md:items-center md:justify-between px-4 space-x-1 lg:space-x-4" >
                     {/* dropdown */}
-                    <MenuListComposition activePage={activePage} />
+                    <MenuDropDown activePage={activePage} />
                     {/* nav items */}
                     {pages.map((page, i) => (
                         <IconButton key={i} className={"relative hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase"}>

@@ -66,7 +66,7 @@ const Form = () => {
                                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                     message: "invalid email address"
                                 }}
-                                )}
+                            )}
                             className="shadow-lg border rounded py-2 px-3 form-input mt-1 block w-full outline-none ring-[#7831c4] focus:ring"
                             id="email"
                             type="text"

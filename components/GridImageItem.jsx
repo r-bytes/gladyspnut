@@ -8,7 +8,7 @@ const GridImageItem = ({ _id, title, mainImage, stackInfo }) => {
             <div className="rounded">
                 <h1 className="p-4"> { title } </h1>
                 <Image
-                    className="rounded-t h-60 w-full object-cover group-hover:scale-105 group-hover:cursor-zoom-in transition-transform duration-300 ease-in-out"
+                    className="rounded-t h-60 w-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
                     alt={mainImage}
                     src={urlFor(mainImage).url()}
                     width={500}
