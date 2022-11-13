@@ -2,12 +2,14 @@
 import Head from "next/head";
 import { DrawChallenge, Hero } from "../components/index";
 import { useRef } from "react";
+import { GridImage } from "@components/index";
+import { sanityClient } from "sanity";
 
-export default function Home() {
+export default function Home({ filteredImages }) {
     const drawRef = useRef(null)
 
     return (
-        <div className="">
+        <div>
             <Head>
                 <title> Gladys P.Nut </title>
                 <meta
@@ -21,7 +23,47 @@ export default function Home() {
                 message={`Artist and Designer based in the Netherlands, lover of everything cute. \n Specializing in character design and everything kawaii!`}
                 drawRef={drawRef}
             />
-            <DrawChallenge ref={drawRef} />
+            <GridImage
+                filteredImages={filteredImages.slice(0, 5)}
+                home
+                ref={drawRef}
+            />
+            {/* todo */}
+            {/* <DrawChallenge ref={drawRef} /> */}
         </div>
     );
+}
+
+export const getServerSideProps = async () => {
+    const query = `
+        *[
+            _type == "work" &&
+            page[0]._ref == *[_type == "pages"][0]._id &&
+            _type in ["work", "stack", "pages"]
+        ]| order(_createdAt asc){
+            _id,
+            title,
+            mainImage,
+            author -> {
+                name,
+                image,
+            },
+            "pageInfo": page[0]-> {
+                _id,
+                title,
+                displayname,
+            },
+            "stackInfo": stack[]-> {
+                _id,
+                title,
+            },
+        }
+    `;
+    const filteredImages = await sanityClient.fetch(query)
+
+    return {
+        props: {
+            filteredImages,
+        },
+    }
 }
