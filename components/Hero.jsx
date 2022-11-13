@@ -35,7 +35,7 @@ const Hero = ({ heading, message, drawRef }) => {
                         </React.Fragment>
                     ))} 
                 </p>
-                <Button className="text-secondary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent bg-button border-none "> book </Button>
+                <button className="cursor-pointer text-secondary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent bg-button border-none"> book </button>
             </div>
             {scroll ? ("") : (
                 <span className="flex items-center justify-center shadow-2xl mt-24">

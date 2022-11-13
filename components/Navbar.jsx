@@ -5,8 +5,6 @@ import TemporaryDrawer from "./TemporaryDrawer";
 import { useEffect, useState } from "react";
 import Theme from "./Theme"
 import { useRouter } from "next/router";
-import { Divider } from "@mui/material";
-import { IconButton } from '@mui/material';
 import { useThemeContext } from "../context/ThemeProvider";
 
 
@@ -42,6 +40,10 @@ const Navbar = () => {
         }
     }, [router])
 
+    useEffect(() => {
+        setActivePage("")
+    }, [])
+
     const pages = [
         {name: "About", url: "/about-me"}, 
         {name: "Commission", url: "/commission-info"}, 
@@ -76,7 +78,7 @@ const Navbar = () => {
                                     {page.name}
                                 </Link>
                                 {activePage === page.name ? (
-                                    <Divider className="absolute top-10 h-[2px] w-[80%] bg-button" />
+                                    <hr className="absolute top-10 h-[2px] w-[80%] bg-button" />
                                 ) : ""}
                             </div>
                         </div>

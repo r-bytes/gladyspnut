@@ -24,12 +24,12 @@ const GridImage = ({ filteredImages, home }) => {
                     {cardImages}
                 </div>
                 {home ? (
-                    <Button
-                        className="mt-12 text-secondary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent bg-button border-none"
+                    <button
+                        className="cursor-pointer mt-12 text-secondary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent bg-button border-none"
                         onClick={() => navigateTo.push("/art-and-illustrations")}
                     > 
                         See more ...
-                    </Button>
+                    </button>
                 ) : ""}
             </div>
         </div>
