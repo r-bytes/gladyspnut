@@ -10,3 +10,4 @@ export { default as Instagram } from "./Instagram.jsx";
 export { default as Carousel } from "./Carousel.jsx";
 export { default as Commission } from "./Commission.jsx";
 export { default as DrawChallenge } from "./DrawChallenge.jsx";
+export { default as Form } from "./Form.jsx";

@@ -1,43 +1,50 @@
 import { Button } from "@mui/material"
 import { useRef, useState } from "react"
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm } from "react-hook-form"
+import emailjs from '@emailjs/browser';
 
 const Form = () => {
     const { register, handleSubmit, formState: {errors} } = useForm()
     const [submitted, setSubmitted] = useState(false)
-
-    const nameRef = useRef()
-    const emailRef = useRef()
-    const commentRef = useRef()
+    const formRef = useRef()
 
     const onSubmit = (data) => {
-
+        setSubmitted(true)
+        
+        emailjs.sendForm(`${process.env.NEXT_PUBLIC_SID}`, `${process.env.NEXT_PUBLIC_TID}`, formRef.current, `${process.env.NEXT_PUBLIC_PKEY}`)
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+            console.log(error.text);
+        });
     }
 
     return (
         submitted ? (
-            <div className="flex flex-col p-10 my-10 bg-green-500 text-white max-w-2xl mx-auto">
-                <h3 className="text-3xl font-bold"> Thank you for reaching out! </h3>
-                <p> Expect a reply asap.. </p>
+            <div className="flex flex-col justify-center items-center h-screen">
+                <div className="bg-secondary backdrop-blur-3xl shadow-2xl mx-4 md:mx-auto rounded p-20">
+                    <h3 className="text-3xl font-bold"> Thank you for reaching out! </h3>
+                    <p> Expect a reply asap.. </p>
+                </div>
             </div>
         ) : (
             <>
                 <h2 className="pt-56 text-center text-5xl font-bold mb-8"> Contact </h2>
                 <form
+                    ref={formRef}
                     onSubmit={handleSubmit(onSubmit)}
-                    className="rounded flex flex-col p-5 my-10 max-w-4xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl mx-auto bg-card backdrop-blur-3xl shadow-2xl px-12 py-24 mb-24"
-                    >
+                    className="mx-4 md:mx-auto rounded flex flex-col p-5 my-10 max-w-4xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl bg-secondary backdrop-blur-3xl shadow-2xl px-12 py-24 mb-24"
+                >
 
                     <label className="block mb-5" htmlFor="name">
                         <span className="text-primary"> Name </span>
                         <input
                             {...register("name", {required: true})}
-                            
-                            className="shadow-lg border rounded py-2 px-3 form-input mt-1 block w-full outline-none ring-[#7831c4] focus:ring"
+                            className="text-secondary shadow-lg border rounded py-2 px-3 form-input mt-1 block w-full outline-none ring-[#7831c4] focus:ring"
                             id="name"
                             type="text"
                             placeholder="Alice Wonderland"
-                            />
+                        />
                     </label>
 
                     <label className="block mb-5" htmlFor="email">
@@ -50,21 +57,21 @@ const Form = () => {
                                     message: "invalid email address"
                                 }}
                             )}
-                            className="shadow-lg border rounded py-2 px-3 form-input mt-1 block w-full outline-none ring-[#7831c4] focus:ring"
+                            className="text-secondary shadow-lg border rounded py-2 px-3 form-input mt-1 block w-full outline-none ring-[#7831c4] focus:ring"
                             id="email"
                             type="text"
                             placeholder="a@wonderland.com"
-                            />
+                        />
                     </label>
 
                     <label className="block mb-5" htmlFor="message">
                         <span className="text-primary"> Message </span>
                         <textarea
                             {...register("comment", {required: true})}
-                            className="shadow-lg border rounded py-2 px-3 form-textarea mt-1 block w-full outline-none ring-[#7831c4] focus:ring"
+                            className="text-secondary shadow-lg border rounded py-2 px-3 form-textarea mt-1 block w-full outline-none ring-[#7831c4] focus:ring"
                             id="comment"
                             rows={10}
-                            />
+                        />
                     </label>
 
                     {/* errors when field validation fails */}
@@ -79,9 +86,10 @@ const Form = () => {
                             <span className="text-red-500"> - Message field is required </span>
                             )}
                     </div>
-                    <Button className="shadow-lg hover:bg-button bg-secondaryAccent focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer">
-                        Send
-                    </Button>
+                    <input
+                        type="submit" 
+                        className="shadow-lg hover:bg-button bg-secondaryAccent focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
+                    />
                 </form>
             </>
 
