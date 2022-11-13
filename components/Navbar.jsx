@@ -50,8 +50,8 @@ const Navbar = () => {
   
     return (
         <div className={ !scroll ?
-            "bg-secondary backdrop-blur-2xl text-primary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center" :
-            "bg-transparant backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50 flex flex-col sm:flex-row py-6 mx-auto sm:px-10 justify-around items-center"
+            "bg-secondary backdrop-blur-2xl text-primary fixed left-0 top-0 w-full min-h-44 z-50 flex py-6 mx-auto sm:px-10 justify-around items-center" :
+            "bg-transparant backdrop-blur-2xl text-secondary fixed left-0 top-0 w-full min-h-44 z-50 flex py-6 mx-auto sm:px-10 justify-around items-center"
         }>
             <a href={"/"}>
                 <Image
@@ -65,11 +65,9 @@ const Navbar = () => {
             </a>
 
             {/* navbar && hamburger */}
-            <div className="">
-
-                <div className="hidden md:flex md:items-center md:justify-between px-4 space-x-1 lg:space-x-4" >
-                    {/* dropdown */}
-                    <MenuDropDown activePage={activePage} />
+            <div className="hidden md:flex md:items-center md:justify-between px-4 space-x-1 lg:space-x-4" >
+                {/* dropdown */}
+                <MenuDropDown activePage={activePage} />
                     {/* nav items */}
                     {pages.map((page, i) => (
                         <IconButton key={i} className={"relative hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase"}>
@@ -84,9 +82,8 @@ const Navbar = () => {
                         </IconButton>
                     ))}
                 <Theme />
-                </div>
-                <TemporaryDrawer />
             </div>
+            <TemporaryDrawer />
         </div>
     )
 }

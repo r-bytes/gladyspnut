@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons"
 const SocialIcons = ({ footer }) => {
     return (
         footer ? (
-            <div className="flex gap-4 justify-center items-center text-primary bg-transparant py-12 z-50 mb-3">
+            <div className="flex gap-1 sm:gap-4 justify-center items-center text-primary bg-transparant py-12 z-50 mb-3">
                 <IconButton>
                     <SocialIcon
                         fgColor="white"

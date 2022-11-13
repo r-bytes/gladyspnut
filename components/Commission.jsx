@@ -10,8 +10,8 @@ const Commission = ({ rootClass }) => {
     return (
         <div className={rootClass}>
             {selectedImages.map(img => (
-                <div className="max-w-5/6 flex flex-col sm:flex-row justify-center items-center gap-20 bg-card mt-12 backdrop-blur-2xl rounded shadow-2xl p-10" key={img.id}>
-                {/* !carousel */}
+                <div className="mx-4 lg:mx-auto flex flex-col sm:flex-row justify-center items-center gap-20 bg-secondary mt-12 backdrop-blur-2xl rounded shadow-2xl p-10" key={img.id}>
+                    {/* !carousel */}
                     <span className="">
                         <Image src={img.imageUrl} className="w-full object-fit h-64 rounded" width={350} height={350} alt="#" />
                     </span>
@@ -27,7 +27,7 @@ const Commission = ({ rootClass }) => {
                 </div>
             ))}
                 {/* carousel */}
-                <div className="w-full flex flex-col flex-shrink-0 left-0 right-0 sm:flex-row items-center gap-20 bg-card mb-24 backdrop-blur-2xl rounded shadow-2xl p-10">
+                <div className="mx-4 lg:mx-auto flex flex-col flex-shrink-0 left-0 right-0 sm:flex-row items-center gap-20 bg-secondary mb-24 backdrop-blur-2xl rounded shadow-2xl p-10">
                     <Carousel images={selectedCarouselImages} />
                     <div className="tracking-wider leading-relaxed">
                         <h1 className="text-3xl font-bold mb-2"> {selectedCarouselImages.title} </h1>
