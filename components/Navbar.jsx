@@ -36,7 +36,7 @@ const Navbar = () => {
         } else if (router.pathname === "/contact") {
             setActivePage("Contact")
         } else {
-            setActivePage("Work")
+            setActivePage("")
         }
     }, [router])
 
