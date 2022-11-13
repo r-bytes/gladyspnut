@@ -1,5 +1,5 @@
 import "@styles/globals.css";
-import { Header, Footer } from "../components";
+import { Footer } from "../components";
 import { ThemeProvider } from "context/ThemeProvider";
 import Navbar from "@components/Navbar";
 
