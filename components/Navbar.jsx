@@ -5,7 +5,8 @@ import TemporaryDrawer from "./TemporaryDrawer";
 import { useEffect, useState } from "react";
 import Theme from "./Theme"
 import { useRouter } from "next/router";
-import { Divider, IconButton } from "@mui/material";
+import { Divider } from "@mui/material";
+import { IconButton } from '@mui/material';
 import { useThemeContext } from "../context/ThemeProvider";
 
 
@@ -66,11 +67,10 @@ const Navbar = () => {
 
             {/* navbar && hamburger */}
             <div className="hidden md:flex md:items-center md:justify-between px-4 space-x-1 lg:space-x-4" >
-                {/* dropdown */}
                 <MenuDropDown activePage={activePage} />
                     {/* nav items */}
                     {pages.map((page, i) => (
-                        <IconButton key={i} className={"relative hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase"}>
+                        <div key={i} className={"relative hover:text-accent rounded text-xs lg:text-sm text-primary font-semibold pr-2 px-2 mx-2 uppercase"}>
                             <div className="flex justify-center items-center">
                                 <Link href={page.url}>
                                     {page.name}
@@ -79,7 +79,7 @@ const Navbar = () => {
                                     <Divider className="absolute top-10 h-[2px] w-[80%] bg-button" />
                                 ) : ""}
                             </div>
-                        </IconButton>
+                        </div>
                     ))}
                 <Theme />
             </div>

@@ -64,9 +64,9 @@ export default function TemporaryDrawer() {
 
     return (
         <>
-            <IconButton className="flex md:hidden hover:bg-secondary" onClick={toggleDrawer("right", true)} >
+            <div className="flex md:hidden hover:bg-secondary" onClick={toggleDrawer("right", true)} >
                 <MenuIcon className="text-primary md:hidden" />    
-            </IconButton>
+            </div>
             <Drawer
                 open={state["right"]}
                 onClose={toggleDrawer("right", false)} anchor={"right"}
