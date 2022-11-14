@@ -1,12 +1,15 @@
 import { Button } from "@mui/material";
 import Image from "next/image"
+import { useRouter } from "next/router";
 import React, { useState } from "react"
 import { useThemeContext } from "../context/ThemeProvider";
+
 
 
 const Hero = ({ heading, message, drawRef }) => {
     const [scroll, setScroll] = useState(false)
     const { theme } = useThemeContext();
+    const navigateTo = useRouter()
 
     const hideArrow = () => {
         if (window.scrollY > 90) {
@@ -35,7 +38,12 @@ const Hero = ({ heading, message, drawRef }) => {
                         </React.Fragment>
                     ))} 
                 </p>
-                <button className="cursor-pointer text-secondary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent bg-button border-none"> book </button>
+                <button
+                    className="cursor-pointer text-secondary rounded uppercase font-bold tracking-widest py-2 px-8 border hover:bg-secondaryAccent bg-button border-none"
+                    onClick={() => navigateTo.push("/contact")}
+                    > 
+                        book
+                    </button>
             </div>
             {scroll ? ("") : (
                 <span className="flex items-center justify-center shadow-2xl mt-24">

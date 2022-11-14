@@ -27,12 +27,12 @@ const Form = () => {
                 </div>
             </div>
         ) : (
-            <>
-                <h2 className="pt-56 text-center text-5xl font-bold mb-8"> Contact </h2>
+            <div className="pt-8">
+                <h2 className="pt-56 text-center text-6xl font-bold mb-8"> Contact </h2>
                 <form
                     ref={formRef}
                     onSubmit={handleSubmit(onSubmit)}
-                    className="mx-4 md:mx-auto rounded flex flex-col p-5 my-10 max-w-4xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl bg-secondary backdrop-blur-3xl shadow-2xl px-12 py-24 mb-24"
+                    className="mx-4 md:mx-auto rounded flex flex-col p-5 max-w-4xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl bg-secondary backdrop-blur-3xl shadow-2xl px-12 py-24 mb-24"
                 >
 
                     <label className="block mb-5" htmlFor="name">
@@ -90,7 +90,7 @@ const Form = () => {
                         className="shadow-lg hover:bg-button bg-secondaryAccent focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
                     />
                 </form>
-            </>
+            </div>
 
 
         )
