@@ -49,9 +49,9 @@ export default function TemporaryDrawer() {
                 
                 <div className="flex flex-col gap-4 tracking-widest">
                     {pages.map((page, index) => (
-                        <ListItem key={index} onClick={() => router.push(page.url)} className="w-screen">
-                            <ListItemButton className="hover:bg-secondary h-full py-4" onClick={toggleDrawer("right", false)}>
-                                <ListItemText disableTypography className="text-primary text-4xl text-center font-semibold" primary={page.name} />
+                        <ListItem key={index} onClick={() => router.push(page.url)} className="w-screen px-0">
+                            <ListItemButton className="w-full hover:bg-secondary h-full" onClick={toggleDrawer("right", false)}>
+                                <ListItemText disableTypography className="h-full text-primary text-4xl text-center font-semibold" primary={page.name} />
                             </ListItemButton>
                         </ListItem>
                     ))}
@@ -64,7 +64,7 @@ export default function TemporaryDrawer() {
 
     return (
         <>
-            <div className="flex md:hidden hover:bg-secondary" onClick={toggleDrawer("right", true)} >
+            <div className="flex md:hidden hover:bg-secondary p-4 rounded-full cursor-pointer" onClick={toggleDrawer("right", true)} >
                 <MenuIcon className="text-primary md:hidden" />    
             </div>
             <Drawer

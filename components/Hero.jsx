@@ -27,8 +27,8 @@ const Hero = ({ heading, message, drawRef }) => {
     // }
 
     return (
-        <div className="flex flex-col items-center justify-between pt-24">
-            <div className="flex flex-col gap-8 items-center mt-72 p-24 rounded bg-secondary backdrop-blur-xl shadow-2xl">
+        <div className="flex flex-col items-center justify-between md:pt-24">
+            <div className="flex flex-col gap-10 items-center mt-72 p-20 rounded bg-secondary backdrop-blur-xl shadow-2xl mx-4 text-center lg:mx-auto max-w-6xl">
                 <h2 className="text-5xl font-bold tracking-wider"> {heading} </h2>
                 <p className="py-5 text-xl text-center leading-loose tracking-wider">
                     {message.split("\n").map((line, index) => (
